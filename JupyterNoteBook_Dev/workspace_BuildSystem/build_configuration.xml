@@ -1,0 +1,34 @@
+
+<config>
+	<package name="Bloomberg_DL_End_of_Day_Pricing_R01">
+		<file name="BBCorpGovtConvEPX.mdx">
+			<field name="field1" type="entitled"></field>
+			<field name="field2" type="entitled"></field>
+			<field name="field3" type="entitled"></field>
+			<field name="field4" type="entitled"></field>
+			<field name="field5" type="entitled"></field>
+			<field name="field6" type="additional"></field>
+			<field name="field7" type="additional"></field>
+		</file>
+		<file name="BBCorpGovtConvPfdPricing.mdx">
+			<field name="field1" type="entitled"></field>
+			<field name="field2" type="entitled"></field>
+			<field name="field3" type="entitled"></field>
+			<field name="field4" type="entitled"></field>
+			<field name="field5" type="entitled"></field>
+			<field name="field6" type="additional"></field>
+			<field name="field7" type="additional"></field>
+		</file>
+	</package>
+	<package name="Bloomberg_DL_End_of_Day_Pricing_R02">
+		<file name="*.mdx">
+			<field name="field8" type="entitled"></field>
+			<field name="field9" type="entitled"></field>
+			<field name="field10" type="entitled"></field>
+			<field name="field11" type="entitled"></field>
+			<field name="field12" type="entitled"></field>
+			<field name="field13" type="additional"></field>
+			<field name="field14" type="additional"></field>
+		</file>
+	</package>
+</config>

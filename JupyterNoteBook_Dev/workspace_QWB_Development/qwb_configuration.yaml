@@ -1,0 +1,524 @@
+data_extraction:
+  - display_name: "Asset Class"
+    roles:
+      - admin
+    items:
+      - display_name: FX
+#     items:
+#       - display_name: Data Extraction
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Domestic Currency"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - USD
+                - JPY
+                - EUR
+                - INR
+                - GBP
+            input_ref: domCurve
+          - display_name: "Foreign Currency"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - USD
+                - JPY
+                - EUR
+                - INR
+                - GBP
+            input_ref: forCurve
+          - display_name: "FX SPOT"
+            default_value: "JPY"
+            display_type: DROPDOWN
+            default_options: 
+                - USD_JPY
+                - INR_JPY
+            input_ref: spot
+            observer_ref: spot
+          - display_name: "SF_FX_VOL_DOM_FORGN"
+            default_value: "JPY"
+            display_type: MULTIPLE_SELECT
+            default_rows_displayed: 4
+            default_options: 
+                - SF_FX_OPT_VOL_USD_JPY
+                - SF_FX_OPT_VOL_USD_JPY_HESTON
+            input_ref: surface
+          - display_name: "CV DOM"
+            default_value: "USD"
+            display_type: MULTIPLE_SELECT
+            default_rows_displayed: 4
+            default_options: 
+                - CV_SWAPRTE_USD_OIS_ON
+                - CV_SWAPRTE_USD_LIBOR_3M
+                - CV_SWAPRTE_USD_FED_ON
+                - CV_SWAPRTE_USD_OIS_ON_MODEL
+            input_ref: cvDom
+          - display_name: "CV FOR"
+            default_value: "JPY"
+            display_type: MULTIPLE_SELECT
+            default_rows_displayed: 4
+            default_options: 
+                - CV_SWAPRTE_JPY_OIS_ON
+                - CV_SWAPRTE_JPY_LIBOR_3M
+                - CV_SWAPRTE_JPY_TIBOR_3M
+            input_ref: cvFor
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            observer_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            input_ref: valuationDate
+            observer_ref: valuationDate
+            display_type: DATE_TIME
+          - display_name: "CSV Directory"
+            display_type: TEXT
+            default_value: "data"
+            input_ref: "csv_directory"
+        output_parameters: ""
+        invoke_ref:
+            name: "functions.utils.GSODataFetcher"
+            input_dict:
+                domCurve: "@domCurve"
+                forCurve: "@forCurve"
+                cvFor: "@cvFor"
+                cvDom: "@cvDom"
+                surface: "@surface"
+                spot: "@spot"
+                csv_directory: "@csv_directory"
+                KEY : "TEST"
+      - display_name: Equities
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+#           - display_name: "Matrix"
+#             #default_value: ""
+#             display_type: DROPDOWN
+#             default_options: GS_OPTIONS_YAML[TIME_SERIES][MATRIX_TYPE][MATRICES]
+          - display_name: "Issue Type"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - EQSHR(Equity Share)
+                - EQOPTION(Equity Option)
+                - ETF (Exchange Traded Funds)
+                - FUND (Fund)
+                - RIGHTS
+                - WARRANT
+                - CERTSHS(Share Certificate)
+                - EQCORR(Equity Correlation)
+                - EQIRCORR (Equity Interest)
+          - display_name: "Select Currency"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - USD
+                - JPY
+                - EUR
+                - INR
+                - GBP
+          - display_name: "Par /Zero Rate Curve"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options:             
+                - CV_IRZERRT ( IR Zero Rate Curve)
+                - CV_IRSWRT ( IR Swap Rate Curve)                
+          - display_name: "Equity Volatility Surface"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - SF_EQOPTVL ( Equity Option Volatility Surface)
+#             (Bond Future Options) 
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            observer_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            input_ref: valuationDate
+            observer_ref: valuationDate
+            display_type: DATE_TIME  
+        output_parameters: ""
+        invoke_ref:
+          name: "functions.utils.CurrencyPairDataFetcher"
+          input_dict:
+              file_name: "@currency_pair_input"
+      - display_name: Interest Rates
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Issue Type"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - BONDFUT(Bond Future)
+                - BOFUTOPTION(Bond Future Options) 
+          - display_name: "Select Currency"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - USD
+                - JPY
+                - EUR
+                - INR
+                - GBP                
+          - display_name: "Interest Rate Curves"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - CV_IRSWRT ( IR Swap Rate Curve)
+                - CV_IRDEPRT ( IR Deposit Rate Curve)
+                - CV_IRFRART (IR Fra Rate Curve)
+                - CV_IRBSSWRT (IR Basis Swap Rate Curve)
+                - CV_IRCSSWRT (IR Cross Currency Swap Rate Curve)
+                - CV_IRZERRT(IR Zero Rate Curve)
+                - CV_IRCPFRVL ( IR Cap Floor Volatility Curve)
+          - display_name: "Interest Rate Surfaces"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - SF_SWAPVOL (Swaption Volatility Surface)
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            observer_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            input_ref: valuationDate
+            observer_ref: valuationDate
+            display_type: DATE_TIME   
+        output_parameters: ""
+        invoke_ref:
+          name: "functions.utils.GSODataFetcher"
+          input_dict:
+            SURFACE_INSTRUMENT_SELECTED: "@SURFACE_INSTRUMENT_SELECTED"
+            KEY : "SURFACE_FETCH"
+      - display_name: Credit
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Issue Type"
+            #default_value: ""
+            display_type: DROPDOWN            
+            default_options:
+                -CRCDSSPD (CDS Spread)
+          - display_name: "Interest Rate Curve"
+            #default_value: "$ISPAOID = '3d3363d9d567b4f96c74e91d6da98d58'"
+            display_type: DROPDOWN
+            input_ref: "gso"
+            default_options: 
+            - CV_IRSWRT ( IR Swap Rate Curve)
+            - CV_IRZERRT ( IR Zero Rate Curve)
+            input_ref: "eql"
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            observer_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            input_ref: valuationDate
+            observer_ref: valuationDate
+            display_type: DATE_TIME
+        output_parameters: ""
+        invoke_ref:
+          name: "functions.utils.GSODataFetcher"
+          input_dict:
+            eql: "@eql"
+            gso: "@gso"
+            KEY: "GSO"            
+      - display_name: Commodities
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Select Currency"
+            #default_value: ""
+            display_type: DROPDOWN
+            default_options: 
+                - USD
+                - JPY
+                - EUR
+                - INR
+                - GBP
+          - display_name: "Commodity Swap Rate Curve"
+            #default_value: "$ISPAOID = '3d3363d9d567b4f96c74e91d6da98d58'"
+            display_type: DROPDOWN
+            input_ref: "gso"
+            default_options: 
+            - CV_COMSWRT (Commodity Swap Rate Curve)
+            - CV_COMZERRT (Commodity Zero Rate Curve)
+          - display_name: "Interest Rate Curves"
+            display_type: DROPDOWN
+            input_ref: "gso"
+            default_options:
+            - CV_IRSWRT ( IR Swap Rate Curve)
+            - CV_IRZERRT ( IR Zero Rate Curve)
+          - display_name: "Commodity Volatility Surface"
+            default_options: 
+            - SF_COMOPTVL (Commodity Option Volatility Surface)
+#             default_value: "$ISPAOID = '5d76d2183ad02840ac962778a733edc1'"
+            display_type: DROPDOWN
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            observer_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            input_ref: valuationDate
+            observer_ref: valuationDate
+            display_type: DATE_TIME
+            input_ref: "eql"
+        output_parameters: ""
+        invoke_ref:
+          name: "functions.utils.GSODataFetcher"
+          input_dict:
+            eql: "@eql"
+            gso: "@gso"
+            KEY: "GSO"
+            
+            
+  - display_name: "Files"
+    roles:
+      - admin
+    items:
+      - display_name: CSV
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Directory"
+            #default_value: ""
+            display_type: TEXT
+            default_value: "data"
+            output_parameters: ""
+            input_ref: "data_directory"
+        invoke_ref:
+            name: "functions.utils.DataFetcher"
+            input_dict:
+                directory: "@data_directory"   
+                type: "CSV"
+                
+                
+  - display_name: "Staging"
+    roles:
+      - admin
+    items:
+      - display_name: Elastic Search
+        extraction: True
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Funds"
+            display_type: MULTIPLE_SELECT
+            input_ref: FUNDS_SELECTED
+            default_value: GS_OPTIONS_ES[FUNDS]
+            default_rows_displayed: 30
+            default_options: GS_OPTIONS_ES[FUNDS]
+            observer_method: on_curve_group_select
+        invoke_ref:
+            name: "functions.utils.ElasticDataFetcher"
+            input_dict:
+                FUNDS_SELECTED: "@FUNDS_SELECTED"
+functions:
+  - display_name: Equities
+    roles:
+      - equity
+    items:
+      - display_name: Implied Volatility
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Selected instruments"
+            default_value: "Equity"
+            display_type: MULTIPLE_SELECT
+            default_value: GS_OBSERVER[SURFACE_INSTRUMENT_SELECTED]
+            default_options:
+                - "GS_OBSERVER[SURFACE_INSTRUMENT_SELECTED]"
+            observer_method: on_value_select_from_curve
+            default_rows_displayed: 10
+            disabled: True
+            input_ref: "inst"
+        invoke_ref:
+          name: "functions.implied_vol_pips_new"
+          input_dict:
+            inst: "@inst"
+    
+
+  - display_name: Statistical Functions
+    roles:
+      - market
+    items:
+      - display_name: Standard Deviation
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Population values (DataFetcher):"
+            default_value: DataFetcher(from="GSOWebService", type="Instrument", id="OJASD@!DASSS2")
+            display_type: TEXT_AREA
+            parameter_type: FUNCTION
+          - display_name: "Population mean:"
+            default_value: "10.45"
+            display_type: TEXT
+        output_parameters: ""
+        invoke_ref: ""
+      - display_name: Correlation Matrix
+        enabled: False
+        visible: True
+        input_parameters: ""
+        output_parameters: ""
+        invoke_ref: ""
+      - display_name: Regression Analysis
+        enabled: False
+        visible: True
+        input_parameters: ""
+        output_parameters: ""
+        invoke_ref: ""
+
+  - display_name: FX
+    roles:
+      - fx
+    items:
+      - display_name: FX Heston Calibration
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Currency pair:"
+            input_ref: "currency_pair"
+            default_value: "USD-JPY"
+            observer_method: on_value_select
+            display_type: TEXT
+            disabled: False
+          - display_name: "Valuation Date:"
+            input_ref: "valuation_date"
+            default_value: "2019-01-23" #YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]
+            display_type: DATE_TIME
+          - display_name: "VIEW SOURCE:"
+            input_ref: "SOURCE"
+            default_value: "http://invm48:8889/files/projects/QWB/functions/FX/FXHestonCalibration.py"
+            display_type: TEXT
+        output:
+          display_type: TAB
+          output_parameters:
+            - display_name: "Currency pair:"
+              input_ref: "currency_pair"
+              default_value: "USD-JPY"
+              display_type: TEXT
+        invoke_ref:
+          name: "functions.FX.FXHestonCalibration"
+          input_dict:
+            currency_pair: "@currency_pair"
+            valuation_date: "@valuation_date"
+      - display_name: FX Vanna Volga Calibration
+        enabled: False
+        visible: True
+        input_parameters: ""
+        output_parameters: ""
+        invoke_ref: ""
+
+  - display_name: Rates
+    roles:
+      - rates
+    items:
+      - display_name: SABR Calibration
+        enabled: False
+        visible: True
+        input_parameters: ""
+        output_parameters: ""
+        invoke_ref: ""
+      - display_name: Multi Curve Calibration
+        enabled: False
+        visible: True
+        input_parameters: ""
+        output_parameters: ""
+        invoke_ref: ""
+        
+  - display_name: Client's Custom
+    items:
+      - display_name: Custom Calibration
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "X:"
+            input_ref: "x"
+            default_value: "Enter the value of 'x'."
+            display_type: TEXT
+        output_parameters: ""
+        invoke_ref: ""
+  - display_name: Investment Analytics
+    roles:
+      - market
+    items:
+      - display_name: Analysis
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Instruments:"
+            input_ref: "x"
+            default_value: "Enter the value of 'x'."
+            display_type: MULTIPLE_SELECT
+            default_options:
+                - WIKI/GOOG
+                - WIKI/AMZN
+                - WIKI/MCD
+                - WIKI/DIS
+        output_parameters: ""
+        invoke_ref:
+            name: "functions.investment_analytics.Example_Analysis"
+            input_dict:
+                x: "@x"
+      - display_name: Optimisation
+        enabled: False
+        visible: True
+        input_parameters:
+          - display_name: "Instruments:"
+            input_ref: "x"
+            default_value: "Enter the value of 'x'."
+            display_type: MULTIPLE_SELECT
+            default_options:
+                - WIKI/GOOG
+                - WIKI/AMZN
+                - WIKI/MCD
+                - WIKI/DIS
+        output_parameters: ""
+        invoke_ref:
+            name: "functions.investment_analytics.Example_Optimisation"
+            input_dict:
+                x: "@x"
+
+data_export:
+  - display_name: ""
+    items:
+      - display_name: CSV
+        enabled: True
+        visible: True
+        input_parameters:
+          - display_name: "Items"
+            display_type: MULTIPLE_SELECT
+            default_options:
+                - "GS_OBSERVER[EXTRACTION_RESULTS]"
+            default_value: GS_OBSERVER[EXTRACTION_RESULTS]
+            default_rows_displayed: 10
+            disabled: False
+            input_ref: "items"
+          - display_name: "Output directory"
+            display_type: TEXT
+            default_value: "output"
+            disabled: False
+            input_ref: "output_directory"
+        invoke_ref:
+          name: "functions.utils.DataExporter"
+          input_dict:
+            items: "@items"
+            output_directory: "@output_directory"
+
+display:
+  categories:
+    type: dropdown
+    direction: down
+    xanchor: left
+    yanchor: auto
+    visible: True
+
+security:
+  roles:
+    - "admin"
+    - "equity"
+    - "fx"
+    - "rates"
+    - "market"

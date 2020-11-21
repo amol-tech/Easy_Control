@@ -1,0 +1,314 @@
+<PackageDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" minInstallCenterVersion="8.1.2.1" version="1.0" xsi:noNamespaceSchemaLocation="PackageDescription.xsd">
+<Package name="Bloomberg DL Global Equity R01" reinstallable="true" type="full" version="8.99.79.0">
+	<Description>Mappings for  Bloomberg DL Global Equity, supported EDM version = 820,841,851,861,870,871,872,880</Description>
+	<Component>Bloomberg DL Global Equity</Component>
+	<Content>
+		<File path="Bloomberg_DL_Global_Equity.tar.gz" type="Package"/>
+		<File path="ReleaseNotes.html" type="ReleaseNotes"/>
+		<File path="MappingReports.tar.gz" type="Documentation"/>
+		<File path="UsedFieldsReports.tar.gz" type="Documentation"/>
+	</Content>
+</Package>
+<Deployment>
+	<Prerequisites>
+		<Product id="Bloomberg Base-820" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.210"/>
+		</Product>
+		<Product id="Bloomberg Base-841" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.206"/>
+		</Product>
+		<Product id="Bloomberg Base-851" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.85"/>
+		</Product>
+		<Product id="Bloomberg Base-861" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.38"/>
+		</Product>
+		<Product id="Bloomberg Base-870" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.13"/>
+		</Product>
+		<Product id="Bloomberg Base-871" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.08"/>
+		</Product>
+		<Product id="Bloomberg Base-872" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="Bloomberg Base-880" name="Bloomberg Base" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="GSDM-WF-820" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.7"/>
+		</Product>
+		<Product id="GSDM-WF-841" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.1"/>
+		</Product>
+		<Product id="GSDM-WF-851" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.1"/>
+		</Product>
+		<Product id="GSDM-WF-861" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.1"/>
+		</Product>
+		<Product id="GSDM-WF-870" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.01"/>
+		</Product>
+		<Product id="GSDM-WF-871" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.01"/>
+		</Product>
+		<Product id="GSDM-WF-872" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="GSDM-WF-880" name="Datamodel Workflow" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="GSDM-CF-820" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.1"/>
+		</Product>
+		<Product id="GSDM-CF-841" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.1"/>
+		</Product>
+		<Product id="GSDM-CF-851" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.1"/>
+		</Product>
+		<Product id="GSDM-CF-861" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.1"/>
+		</Product>
+		<Product id="GSDM-CF-870" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.01"/>
+		</Product>
+		<Product id="GSDM-CF-871" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.01"/>
+		</Product>
+		<Product id="GSDM-CF-872" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="GSDM-CF-880" name="Datamodel Configuration" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="Connection-Base-899" name="Connection Base" type="GOLDENSOURCE">
+			<Version min="8.99.34.0"/>
+		</Product>
+		<Product id="GSDM-SS-820" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.293"/>
+		</Product>
+		<Product id="GSDM-SS-841" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.285"/>
+		</Product>
+		<Product id="GSDM-SS-851" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.180"/>
+		</Product>
+		<Product id="GSDM-SS-861" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.122"/>
+		</Product>
+		<Product id="GSDM-SS-870" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.74"/>
+		</Product>
+		<Product id="GSDM-SS-871" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.31"/>
+		</Product>
+		<Product id="GSDM-SS-872" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="GSDM-SS-880" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="GSDM-820" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.134"/>
+		</Product>
+		<Product id="GSDM-841" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.153"/>
+		</Product>
+		<Product id="GSDM-851" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.55"/>
+		</Product>
+		<Product id="GSDM-861" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.58"/>
+		</Product>
+		<Product id="GSDM-870" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.73"/>
+		</Product>
+		<Product id="GSDM-871" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.30"/>
+		</Product>
+		<Product id="GSDM-872" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="GSDM-880" name="Datamodel GSDM" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="VDDB-820" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.134"/>
+		</Product>
+		<Product id="VDDB-841" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.153"/>
+		</Product>
+		<Product id="VDDB-851" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.55"/>
+		</Product>
+		<Product id="VDDB-861" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.6.1.x" min="8.6.1.58"/>
+		</Product>
+		<Product id="VDDB-870" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.0.x" min="8.7.0.73"/>
+		</Product>
+		<Product id="VDDB-871" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.1.x" min="8.7.1.30"/>
+		</Product>
+		<Product id="VDDB-872" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.7.2.x" min="8.7.2.01"/>
+		</Product>
+		<Product id="VDDB-880" name="Datamodel VDDB" type="GOLDENSOURCE">
+			<Version max="8.8.0.x" min="8.8.0.01"/>
+		</Product>
+		<Product id="Bloomberg DataSets" name="Bloomberg DataSets" type="GOLDENSOURCE">
+			<Version min="2020.04.15.0"/>
+		</Product>
+		<Product id="Bloomberg Domain DataSets" name="Bloomberg Domain DataSets" type="GOLDENSOURCE">
+			<Version min="2020.09.21.0"/>
+		</Product>
+		<Product id="Bloomberg Market DataSet-820" name="Bloomberg Market DataSet" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.208"/>
+		</Product>
+		<Product id="Bloomberg Market DataSet-841" name="Bloomberg Market DataSet" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.208"/>
+		</Product>
+		<Product id="Bloomberg Market DataSet-851" name="Bloomberg Market DataSet" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.80"/>
+		</Product>
+		<Product id="Bloomberg Common" name="Bloomberg-Common" type="GOLDENSOURCE">
+			<Version min="8.99.22.0"/>
+		</Product>
+		<Product id="Country Level Market DataSet-820" name="Country Level Market Dataset" type="GOLDENSOURCE">
+			<Version max="8.2.0.x" min="8.2.0.3"/>
+		</Product>
+		<Product id="Country Level Market DataSet-841" name="Country Level Market Dataset" type="GOLDENSOURCE">
+			<Version max="8.4.1.x" min="8.4.1.2"/>
+		</Product>
+		<Product id="Country Level Market DataSet-851" name="Country Level Market Dataset" type="GOLDENSOURCE">
+			<Version max="8.5.1.x" min="8.5.1.1"/>
+		</Product>
+		<Product id="GSFD-ISO10383 Markets" name="GSFD-ISO10383 Markets" type="GOLDENSOURCE">
+			<Version min="8.99.24.0"/>
+		</Product>
+	</Prerequisites>
+	<Locations>
+		<Location id="CFDataModel" multiple="true" type="Database">
+			<Description>The destination where the Configuration Datamodel was installed.</Description>
+			<Prerequisites>
+  			<or>
+    			<Prerequisite id="GSDM-CF-820"/>
+    			<Prerequisite id="GSDM-CF-841"/>
+    			<Prerequisite id="GSDM-CF-851"/>
+    			<Prerequisite id="GSDM-CF-861"/>
+    			<Prerequisite id="GSDM-CF-870"/>
+    			<Prerequisite id="GSDM-CF-871"/>
+    			<Prerequisite id="GSDM-CF-872"/>
+    			<Prerequisite id="GSDM-CF-880"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Connection-Base-899"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="GSFD-ISO10383 Markets" required="false"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Bloomberg Common" required="false"/>
+  			</or>
+			</Prerequisites>
+		</Location>
+		<Location id="WFDataModel" multiple="true" type="Database">
+			<Description>The destination where the Workflow Datamodel was installed.</Description>
+			<Prerequisites>
+  			<or>
+    			<Prerequisite id="GSDM-WF-820"/>
+    			<Prerequisite id="GSDM-WF-841"/>
+    			<Prerequisite id="GSDM-WF-851"/>
+    			<Prerequisite id="GSDM-WF-861"/>
+    			<Prerequisite id="GSDM-WF-870"/>
+    			<Prerequisite id="GSDM-WF-871"/>
+    			<Prerequisite id="GSDM-WF-872"/>
+    			<Prerequisite id="GSDM-WF-880"/>
+  			</or>
+			</Prerequisites>
+		</Location>
+		<Location id="GSDMDataModel" multiple="true" type="Database">
+			<Description>The destination where the GSDM Datamodel was installed.</Description>
+			<Prerequisites>
+  			<or>
+    			<or>
+      			<Prerequisite id="GSDM-820"/>
+      			<Prerequisite id="GSDM-841"/>
+      			<Prerequisite id="GSDM-851"/>
+      			<Prerequisite id="GSDM-861"/>
+      			<Prerequisite id="GSDM-870"/>
+      			<Prerequisite id="GSDM-871"/>
+      			<Prerequisite id="GSDM-872"/>
+      			<Prerequisite id="GSDM-880"/>
+    			</or>
+    			<or>
+      			<Prerequisite id="VDDB-820"/>
+      			<Prerequisite id="VDDB-841"/>
+      			<Prerequisite id="VDDB-851"/>
+      			<Prerequisite id="VDDB-861"/>
+      			<Prerequisite id="VDDB-870"/>
+      			<Prerequisite id="VDDB-871"/>
+      			<Prerequisite id="VDDB-872"/>
+      			<Prerequisite id="VDDB-880"/>
+    			</or>
+  			</or>
+  			<or>
+    			<Prerequisite id="GSDM-SS-820"/>
+    			<Prerequisite id="GSDM-SS-841"/>
+    			<Prerequisite id="GSDM-SS-851"/>
+    			<Prerequisite id="GSDM-SS-861"/>
+    			<Prerequisite id="GSDM-SS-870"/>
+    			<Prerequisite id="GSDM-SS-871"/>
+    			<Prerequisite id="GSDM-SS-872"/>
+    			<Prerequisite id="GSDM-SS-880"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Bloomberg Base-820"/>
+    			<Prerequisite id="Bloomberg Base-841"/>
+    			<Prerequisite id="Bloomberg Base-851"/>
+    			<Prerequisite id="Bloomberg Base-861"/>
+    			<Prerequisite id="Bloomberg Base-870"/>
+    			<Prerequisite id="Bloomberg Base-871"/>
+    			<Prerequisite id="Bloomberg Base-872"/>
+    			<Prerequisite id="Bloomberg Base-880"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Bloomberg DataSets"/>
+  			</or>
+			<or>
+    			<Prerequisite id="Bloomberg Domain DataSets" required="false"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Bloomberg Market DataSet-820" required="false"/>
+    			<Prerequisite id="Bloomberg Market DataSet-841" required="false"/>
+    			<Prerequisite id="Bloomberg Market DataSet-851" required="false"/>
+  			</or>
+  			<or>
+    			<Prerequisite id="Country Level Market DataSet-820" required="false"/>
+    			<Prerequisite id="Country Level Market DataSet-841" required="false"/>
+    			<Prerequisite id="Country Level Market DataSet-851" required="false"/>
+  			</or>
+			</Prerequisites>
+		</Location>
+	</Locations>
+	<Tasks>
+		<!-- First untar the package temporarily -->
+		<tgz description="Untar the package archive temporarily" name="Untar the Package" src="Bloomberg_DL_Global_Equity.tar.gz" srcLoc="PackageZip"/>
+		<!-- MDXs: -->
+		<deployResource dest="mapping/Bloomberg/" destLoc="CFDataModel" encoding="UTF-8" name="BBGlobalEquity.mdx" patchLevel="8.99.79.0" src="MappingSpecification/BBGlobalEquity.mdx"/>
+		<deployResource dest="mapping/Bloomberg/" destLoc="CFDataModel" encoding="UTF-8" name="BBPreferredExchangeTraded.mdx" patchLevel="8.99.79.0" src="MappingSpecification/BBPreferredExchangeTraded.mdx"/>
+		<deployResource dest="mapping/Bloomberg/" destLoc="CFDataModel" encoding="UTF-8" name="BBGlobalEquityShortSale.mdx" patchLevel="8.99.20.0" src="MappingSpecification/BBGlobalEquityShortSale.mdx"/>
+		<deployResource dest="mapping/Bloomberg/" destLoc="CFDataModel" encoding="UTF-8" name="BBGlobalEquityShortSaleCircuitBreak.mdx" patchLevel="8.99.20.0" src="MappingSpecification/BBGlobalEquityShortSaleCircuitBreak.mdx"/>
+		<!-- GoldenSource Package: -->
+		<deployGSP destLoc="CFDataModel" name="Bloomberg_DL_Global_Equity.gsp" patchLevel="8.1.2.1" src="GSP/Bloomberg_DL_Global_Equity.gsp"/>
+		<deployGSP destLoc="WFDataModel" name="Bloomberg_DL_Global_Equity.gsp" patchLevel="8.1.2.1" src="GSP/Bloomberg_DL_Global_Equity.gsp" type="workflow"/>
+		<sql dbDialect="ORACLE" destLoc="CFDataModel" encoding="UTF-8" name="GSDM_Bloomberg_DL_Global_Equity_MSTP_20110722.sql" patchLevel="8.99.0.1" src="SQL/GSDM_Bloomberg_DL_Global_Equity_MSTP_20110722.sql"/>
+		<sql dbDialect="ORACLE" destLoc="CFDataModel" encoding="UTF-8" name="GSDM_Bloomberg_DL_Global_Equity_VRET_20130612.sql" patchLevel="8.99.9.0" src="SQL/GSDM_Bloomberg_DL_Global_Equity_VRET_20130612.sql"/>
+		<sql dbDialect="ORACLE" destLoc="CFDataModel" encoding="UTF-8" name="GSDM_Bloomberg_DL_Global_Equity_VRET_20130618.sql" patchLevel="8.99.9.0" src="SQL/GSDM_Bloomberg_DL_Global_Equity_VRET_20130618.sql"/>
+		<sql dbDialect="ORACLE" destLoc="CFDataModel" encoding="UTF-8" name="GSDM_Bloomberg_DL_Global_Equity_VRET_20150720.sql" patchLevel="8.99.44.0" src="SQL/GSDM_Bloomberg_DL_Global_Equity_VRET_20150720.sql"/>
+		<sql dbDialect="ORACLE" destLoc="CFDataModel" encoding="UTF-8" name="GSDM_Bloomberg_DL_Global_Equity_VRET_20170807.sql" patchLevel="8.99.65.0" src="SQL/GSDM_Bloomberg_DL_Global_Equity_VRET_20170807.sql"/>
+	</Tasks>
+</Deployment>
+</PackageDescription>
