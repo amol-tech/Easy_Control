@@ -4,6 +4,7 @@ from os import path
 import shutil
 import zipfile
 import tarfile
+import sys
 
 # -------------------------------------------------------------------------------------------------------------------
 '''
@@ -39,10 +40,10 @@ def set_package_name(file_package_desc,package_name):
 
 # -------------------------------------------------------------------------------------------------------------------
 '''
-Main Function : split_config
+	Function : split_config
     Read configuration xml file and split into multiple text files of fields
 '''
-def split_config(file_config,dir_out):
+def split_config(file_config,dir_out,dir_mapping):
     dict_config = {}
     with open(file_config, 'r') as content_file:
         content = content_file.read()
@@ -56,8 +57,8 @@ def split_config(file_config,dir_out):
             list_fields = [elm_file.attrib['name'] for elm_file in elm_file.findall('field')]
             str_fields = '\n'.join(list_fields)
             dict_fields[file_name]=str_fields
-            dict_config_part['mdx'] = elm_file.attrib['name']
-            dict_config_part['config'] = file_name
+            dict_config_part['mdx'] = os.path.join(dir_mapping, elm_file.attrib['name'])
+            dict_config_part['config'] = os.path.join(dir_out, file_name)
             list_config_part.append(dict_config_part)
         dict_config[elm_pkg.attrib['name']]=list_config_part 
         
@@ -69,7 +70,7 @@ def split_config(file_config,dir_out):
     return dict_config
 # -------------------------------------------------------------------------------------------------------------------
 '''
-Main Function : extract_package
+	Function : extract_package
     Extract given package into directory
 '''
 def extract_package(file_package,dir_extract):
@@ -95,13 +96,13 @@ def extract_package(file_package,dir_extract):
     file_package_desc = os.path.join(dir_extract,'PackageDescription.xml')
     package_tar_name,package_version = get_package_tar_name_and_version(file_package_desc)
     file_tar = os.path.join(dir_extract,package_tar_name)
-    tar = tarfile.open(os.path.join(dir_extract,file_tar))
+    tar = tarfile.open(file_tar)
     tar.extractall(os.path.join(dir_extract,'content')) 
     tar.close()
     print('Package extracted successfully')
 # -------------------------------------------------------------------------------------------------------------------
 '''
-Main Function : build_package
+	Function : build_package
     To build the package with the content of given directory and package name
 '''
 def build_package(dir_source,dir_out,package_name):
@@ -132,3 +133,36 @@ def build_package(dir_source,dir_out,package_name):
     shutil.make_archive(file_package,'zip',dir_source)
     print('Package built successfully')
 # -------------------------------------------------------------------------------------------------------------------
+'''
+	Function : build
+    Main calling function
+'''
+def build(file_build_config,file_package):
+    dir_temp = os.path.join(os.getcwd(),'temp')
+    dir_mapping = os.path.join(dir_temp,'content'+os.path.sep+'MappingSpecification')
+    dir_out = 'output'
+    dir_config = 'config'
+
+    # Creating output directory
+    if os.path.exists(dir_out) and os.path.isdir(dir_out):
+        shutil.rmtree(dir_out)
+    os.mkdir(dir_out)
+
+    # Creating config directory
+    if os.path.exists(dir_config) and os.path.isdir(dir_config):
+        shutil.rmtree(dir_config)
+    os.mkdir(dir_config)
+
+    packages = split_config(file_build_config,dir_config,dir_mapping)
+
+    for package in packages:
+        extract_package(file_package,dir_temp)
+        for mdx_config in packages[package]:
+            print(mdx_config['mdx'])
+            print('--------------------------------')
+        build_package(dir_temp,dir_out,package)
+		
+# -------------------------------------------------------------------------------------------------------------------
+print('First argument ' + sys.argv[1])
+print('Second argument ' + sys.argv[2])
+build(sys.argv[1],sys.argv[2])
