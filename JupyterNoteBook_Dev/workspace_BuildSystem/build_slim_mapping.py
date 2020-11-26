@@ -135,7 +135,11 @@ def build_package(dir_source,dir_out,package_name):
 # -------------------------------------------------------------------------------------------------------------------
 '''
 	Function : build
+<<<<<<< HEAD
     Calling Function
+=======
+    Main calling function
+>>>>>>> 06af5bd91a593d3101ea6c4f7f67fe8ff50a7561
 '''
 def build(file_build_config,file_package):
     dir_temp = os.path.join(os.getcwd(),'temp')
@@ -161,7 +165,9 @@ def build(file_build_config,file_package):
             print(mdx_config['mdx'])
             print('--------------------------------')
         build_package(dir_temp,dir_out,package)
+
 # -------------------------------------------------------------------------------------------------------------------
 print('First Argument :' + sys.argv[1])
 print('Second Argument :' + sys.argv[2])
 build(sys.argv[1],sys.argv[2])
+
