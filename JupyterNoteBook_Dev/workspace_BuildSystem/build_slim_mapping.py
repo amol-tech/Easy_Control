@@ -162,8 +162,12 @@ def build(file_build_config,file_package):
     for package in packages:
         extract_package(file_package,dir_temp)
         for mdx_config in packages[package]:
-            print(mdx_config['mdx'])
-            print('--------------------------------')
+            if('*.mdx' in mdx_config['mdx']):
+                for f in os.listdir(dir_mapping):
+                    print(os.path.join(dir_mapping,f))
+            else:
+                print(mdx_config['mdx'])
+            print('--------------------------------')      
         build_package(dir_temp,dir_out,package)
 
 # -------------------------------------------------------------------------------------------------------------------

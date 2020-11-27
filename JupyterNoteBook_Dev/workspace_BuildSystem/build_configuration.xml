@@ -1,34 +1,56 @@
 
 <config>
 	<package name="Bloomberg_DL_End_of_Day_Pricing_R01">
-		<file name="BBCorpGovtConvEPX.mdx">
-			<field name="field1" type="entitled"></field>
-			<field name="field2" type="entitled"></field>
-			<field name="field3" type="entitled"></field>
-			<field name="field4" type="entitled"></field>
-			<field name="field5" type="entitled"></field>
-			<field name="field6" type="additional"></field>
-			<field name="field7" type="additional"></field>
-		</file>
-		<file name="BBCorpGovtConvPfdPricing.mdx">
-			<field name="field1" type="entitled"></field>
-			<field name="field2" type="entitled"></field>
-			<field name="field3" type="entitled"></field>
-			<field name="field4" type="entitled"></field>
-			<field name="field5" type="entitled"></field>
-			<field name="field6" type="additional"></field>
-			<field name="field7" type="additional"></field>
+		<file name="BBGlobalEquity.mdx">
+			<field name="SECURITIES" type="entitled"></field>
+			<field name="ERRORCODE" type="entitled"></field>
+			<field name="NUMFLDS" type="entitled"></field>
+			<field name="TICKER" type="entitled"></field>
+			<field name="EXCH_CODE" type="entitled"></field>
+			<field name="NAME" type="entitled"></field>
+			<field name="COUNTRY" type="entitled"></field>
+			<field name="CRNCY" type="entitled"></field>
+			<field name="SECURITY_TYP" type="entitled"></field>
+			<field name="PAR_AMT" type="entitled"></field>
+			<field name="EQY_PRIM_EXCH" type="entitled"></field>
+			<field name="EQY_PRIM_EXCH_SHRT" type="entitled"></field>
+			<field name="EQY_SIC_CODE" type="entitled"></field>
+			<field name="EQY_SIC_NAME" type="entitled"></field>
+			<field name="INDUSTRY_GROUP" type="entitled"></field>
+			<field name="INDUSTRY_SUBGROUP" type="entitled"></field>
+			<field name="INDUSTRY_SECTOR" type="entitled"></field>
+			<field name="ID_SEDOL1" type="entitled"></field>
+			<field name="ID_WERTPAPIER" type="entitled"></field>
+			<field name="ID_ISIN" type="entitled"></field>
+			<field name="ID_DUTCH" type="entitled"></field>
+			<field name="ID_VALOREN" type="entitled"></field>
 		</file>
 	</package>
 	<package name="Bloomberg_DL_End_of_Day_Pricing_R02">
-		<file name="*.mdx">
-			<field name="field8" type="entitled"></field>
-			<field name="field9" type="entitled"></field>
-			<field name="field10" type="entitled"></field>
-			<field name="field11" type="entitled"></field>
-			<field name="field12" type="entitled"></field>
-			<field name="field13" type="additional"></field>
-			<field name="field14" type="additional"></field>
+		<file name="BBGlobalEquity.mdx">
+			<field name="SECURITIES" type="entitled"></field>
+			<field name="ERRORCODE" type="entitled"></field>
+			<field name="NUMFLDS" type="entitled"></field>
+			<field name="TICKER" type="entitled"></field>
+			<field name="EXCH_CODE" type="entitled"></field>
+			<field name="NAME" type="entitled"></field>
+			<field name="COUNTRY" type="entitled"></field>
+			<field name="CRNCY" type="entitled"></field>
+			<field name="SECURITY_TYP" type="entitled"></field>
+			<field name="PAR_AMT" type="entitled"></field>
+			<field name="EQY_PRIM_EXCH" type="entitled"></field>
+			<field name="EQY_PRIM_EXCH_SHRT" type="entitled"></field>
+			<field name="EQY_SIC_CODE" type="entitled"></field>
+			<field name="EQY_SIC_NAME" type="entitled"></field>
+			<field name="INDUSTRY_GROUP" type="entitled"></field>
+			<field name="INDUSTRY_SUBGROUP" type="entitled"></field>
+			<field name="INDUSTRY_SECTOR" type="entitled"></field>
+			<field name="ID_SEDOL1" type="entitled"></field>
+			<field name="ID_WERTPAPIER" type="entitled"></field>
+			<field name="ID_BB_COMPANY" type="entitled"></field>
+			<field name="ID_BB_SECURITY" type="entitled"></field>
+			<field name="ID_CUSIP" type="entitled"></field>
+			<field name="ID_COMMON" type="entitled"></field>
 		</file>
 	</package>
 </config>
