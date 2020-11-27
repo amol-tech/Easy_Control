@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repositoryConnectionProfiles>
+    <repository name="IS_DEMO" host="indev29" port="1521" service="indev29" password="IS_DEMO" user="IS_DEMO">
+        <sslEnable>false</sslEnable>
+    </repository>
+</repositoryConnectionProfiles>
