@@ -38,6 +38,14 @@ def set_package_name(file_package_desc,package_name):
     root = tree.getroot()    
     tree.write(file_package_desc)
 
+def get_fields(tree,field_set_id):
+    fields = []
+    list_field_set  = [field_set for field_set in tree.findall('.//field_set') if field_set.attrib['id'] == field_set_id]
+    elm_field_set = list_field_set[0] if len(list_field_set) > 0 else None
+    if (elm_field_set != None) :
+        fields = [elm_field.attrib['name']+"=>"+elm_field.attrib['type'] for elm_field in elm_field_set.findall('field')]
+    return fields
+
 # -------------------------------------------------------------------------------------------------------------------
 '''
 	Function : split_config
@@ -53,12 +61,16 @@ def split_config(file_config,dir_out,dir_mapping):
         list_config_part = []
         for elm_file in elm_pkg.findall('file'):
             dict_config_part = {}
-            file_name = elm_pkg.attrib['name']+ '_' + elm_file.attrib['name'].replace('.mdx','').replace('*','all')+'_fields.txt'
-            list_fields = [elm_file.attrib['name'] for elm_file in elm_file.findall('field')]
-            str_fields = '\n'.join(list_fields)
-            dict_fields[file_name]=str_fields
             dict_config_part['mdx'] = os.path.join(dir_mapping, elm_file.attrib['name'])
-            dict_config_part['config'] = os.path.join(dir_out, file_name)
+            
+            file_name = elm_pkg.attrib['name']+ '_' + elm_file.attrib['name'].replace('.mdx','').replace('*','all')+'_fields.txt'
+            list_fields = get_fields(elm_pkg,elm_file.attrib['field_set'])
+            if(len(list_fields) > 0) :
+                str_fields = '\n'.join(list_fields)
+                dict_fields[file_name] = str_fields
+                dict_config_part['config'] = os.path.join(dir_out, file_name)
+            else:
+                dict_config_part['config'] = None
             list_config_part.append(dict_config_part)
         dict_config[elm_pkg.attrib['name']]=list_config_part 
         
@@ -105,41 +117,52 @@ def extract_package(file_package,dir_extract):
 	Function : build_package
     To build the package with the content of given directory and package name
 '''
-def build_package(dir_source,dir_out,package_name):
-    # Tar Used Field Report
-    dir_used_field_report = os.path.join(dir_source,'UsedFieldsReports')
-    make_tarfile(os.path.join(dir_source,'UsedFieldsReports.tar.gz'),dir_used_field_report)
-    shutil.rmtree(dir_used_field_report)
+def build(file_build_config,file_package):
+    dir_temp = os.path.join(os.getcwd(),'temp')
+    dir_mapping = os.path.join(dir_temp,'content'+os.path.sep+'MappingSpecification')
+    dir_out = 'output'
+    dir_config = 'config'
+    dir_dependencies ='dependencies'
+
+    # Creating output directory
+    if os.path.exists(dir_out) and os.path.isdir(dir_out):
+        shutil.rmtree(dir_out)
+    os.mkdir(dir_out)
+
+    # Creating config directory
+    if os.path.exists(dir_config) and os.path.isdir(dir_config):
+        shutil.rmtree(dir_config)
+    os.mkdir(dir_config)
+
+    packages = split_config(file_build_config,dir_config,dir_mapping)
     
-    # Tar Mapping Report
-    dir_mapping_report = os.path.join(dir_source,'MappingReports')
-    make_tarfile(os.path.join(dir_source,'MappingReports.tar.gz'),dir_mapping_report)
-    shutil.rmtree(dir_mapping_report)
-    
-    # Fetching attributes from Package Description
-    file_package_desc = os.path.join(dir_source,'PackageDescription.xml')
-    package_tar_name,package_version = get_package_tar_name_and_version(file_package_desc)
-    package_zip_name = 'Full_'+package_version.replace('.','_')+'_'+package_name.replace(' ','_')+'.zip'
-    file_package = os.path.join(dir_out,package_zip_name)
-    
-    # Set the package name
-    set_package_name(file_package_desc,package_name)
-    
-    # Tar Mapping Content  
-    dir_content = os.path.join(dir_source,'content')
-    make_tarfile(os.path.join(dir_source,package_tar_name),dir_content,exclude_parent=True)
-    shutil.rmtree(dir_content)
-    
-    shutil.make_archive(file_package,'zip',dir_source)
-    print('Package built successfully')
+    file_cmd = 'generateSlimMappingForFields.cmd'
+    for package in packages:
+        extract_package(file_package,dir_temp)
+        # Copy Dependencies
+        copy_dependencies(dir_dependencies,dir_temp)
+
+        for mdx_config in packages[package]:
+            if( mdx_config['config'] != None):
+                if('*.mdx' in mdx_config['mdx']):
+                    for f in os.listdir(dir_mapping):
+                        process = subprocess.run([file_cmd,os.path.join(dir_mapping,f), mdx_config['config']], 
+                                                 check=True, stdout=subprocess.PIPE,universal_newlines=True, shell=True)
+                        print(process)
+                else:
+                    process = subprocess.run([file_cmd,mdx_config['mdx'], mdx_config['config']], 
+                                                 check=True, stdout=subprocess.PIPE,universal_newlines=True, shell=True)
+                    print(process)
+            print('--------------------------------')   
+        # Remove Dependencies
+        remove_dependencies
+
+        build_package(dir_temp,dir_out,package)
 # -------------------------------------------------------------------------------------------------------------------
 '''
 	Function : build
-<<<<<<< HEAD
-    Calling Function
-=======
     Main calling function
->>>>>>> 06af5bd91a593d3101ea6c4f7f67fe8ff50a7561
+
 '''
 def build(file_build_config,file_package):
     dir_temp = os.path.join(os.getcwd(),'temp')

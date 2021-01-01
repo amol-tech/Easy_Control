@@ -1,7 +1,11 @@
 
 <config>
 	<package name="Bloomberg_DL_End_of_Day_Pricing_R01">
-		<file name="BBGlobalEquity.mdx">
+		<file name="BBGlobalEquity.mdx" field_set="fields_BBGlobalEquity"/>
+		<file name="Test1.mdx" field_set="fields_x"/>
+		<file name="Test2.mdx" field_set="fields_x"/>
+		<file name="Test3.mdx" field_set="*"/>
+		<field_set id="fields_BBGlobalEquity">
 			<field name="SECURITIES" type="entitled"></field>
 			<field name="ERRORCODE" type="entitled"></field>
 			<field name="NUMFLDS" type="entitled"></field>
@@ -24,10 +28,20 @@
 			<field name="ID_ISIN" type="entitled"></field>
 			<field name="ID_DUTCH" type="entitled"></field>
 			<field name="ID_VALOREN" type="entitled"></field>
-		</file>
+		</field_set>
+		<field_set id="fields_x">
+			<field name="SECURITIES" type="entitled"></field>
+			<field name="ERRORCODE" type="entitled"></field>
+			<field name="NUMFLDS" type="entitled"></field>
+			<field name="TICKER" type="entitled"></field>
+			<field name="EXCH_CODE" type="entitled"></field>
+			<field name="NAME" type="entitled"></field>
+			<field name="COUNTRY" type="entitled"></field>
+		</field_set>
 	</package>
 	<package name="Bloomberg_DL_End_of_Day_Pricing_R02">
-		<file name="BBGlobalEquity.mdx">
+		<file name="BBGlobalEquity.mdx" field_set="fields_BBGlobalEquity"/>
+		<field_set id="fields_BBGlobalEquity">
 			<field name="SECURITIES" type="entitled"></field>
 			<field name="ERRORCODE" type="entitled"></field>
 			<field name="NUMFLDS" type="entitled"></field>
@@ -51,6 +65,6 @@
 			<field name="ID_BB_SECURITY" type="entitled"></field>
 			<field name="ID_CUSIP" type="entitled"></field>
 			<field name="ID_COMMON" type="entitled"></field>
-		</file>
+		</field_set>
 	</package>
 </config>
