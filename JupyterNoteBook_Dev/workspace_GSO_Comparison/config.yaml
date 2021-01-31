@@ -1,0 +1,220 @@
+elements :
+    - name : 'entiyType'
+      compare_cols : 
+        - 'name'
+        - 'mainTable'
+        - 'entityTypeCol'
+        - 'entityTypeColNme'
+        - 'subTypTableName'
+      unique_cols : 
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'name'
+      parent : 'Y'
+      
+    - name : 'beField'
+      compare_cols : 
+        - 'name'
+        - 'mandatory'
+        - 'multiplicity'
+        - 'class'
+        - 'customSQL'
+      unique_cols : 
+        - 'entityTypeId'
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'type->entityTypeId'
+        - 'name'
+      parent : 'Y'
+      verify_addon : 'verify_mapping'
+    
+    - name : 'dataGroup'
+      compare_cols : 
+        - 'name'
+        - 'multiplicity'
+        - 'displayCaption'
+      unique_cols : 
+        - 'entityTypeId'
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'type->entityTypeId'
+        - 'name'
+      parent : 'Y'
+      child_elements:
+        - 'dataGroup.part'
+     
+    - name : 'occurrence'
+      compare_cols : 
+        - 'name'
+        - 'multiplicity'
+        - 'table'
+        - 'timeSeries'
+      unique_cols :
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'name'
+      parent : 'Y'
+      child_elements:
+        - 'occurrence.field'
+        - 'occurrence.value'
+        - 'occurrence.option'
+    
+    - name : 'relation'
+      compare_cols : 
+        - 'name'
+        - 'srcTable'
+        - 'tgtTable'
+        - 'customSQL'
+      unique_cols :
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'name'
+        - 'srcTable'
+        - 'tgtTable'
+      parent : 'Y'
+     
+    - name : 'businessEntity'
+      compare_cols : 
+        - 'name'
+        - 'displayCaption'
+      unique_cols :
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'type->entityTypeId'
+        - 'name'
+      parent : 'Y'
+      
+    - name : 'config'
+      compare_cols : 
+        - 'disParentConfig'
+      display_cols : 
+        - 'gso'
+        - 'option'
+        - 'definition'
+      parent : 'Y'
+      
+    - name : 'entityRelation'
+      compare_cols : 
+        - 'name'
+        - 'multiplicity'
+        - 'entityId'
+        - 'rltdEntityId'
+        - 'lookupField'
+      unique_cols :
+        - 'name'
+        - 'entityId'
+        - 'rltdEntityId'
+      display_cols : 
+        - 'id'
+        - 'gso->entityId'
+        - 'name'
+      parent : 'Y'
+      child_elements:
+        - 'entityRelation.part'
+    
+    - name : 'completeness'
+      compare_cols : 
+        - 'name'
+        - 'disParentConfig'
+      unique_cols :
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'gso->entityId'
+        - 'name'
+      parent : 'Y'
+      
+    - name : 'naturalKey'
+      compare_cols : 
+        - 'name'
+        - 'dataGroupId'
+      unique_cols :
+        - 'name'
+      display_cols : 
+        - 'id'
+        - 'name'
+      parent : 'Y'
+      child_elements:
+        - 'naturalKey.part'
+    
+    - name : 'dataGroup.part'
+      compare_cols : 
+        - 'definition'
+        - 'label'
+        - 'displayCaption'
+        - 'multiplicity'
+        - 'prntReqdInd'
+      unique_cols :
+        - 'definition'
+      display_cols : 
+        - 'id'
+        - 'definition'
+      parent : 'N'
+    
+    - name : 'occurrence.field'
+      compare_cols : 
+        - 'name'
+        - 'relationId'
+      unique_cols :
+        - 'name'
+        - 'relationId'
+      display_cols : 
+        - 'id'
+        - 'name'
+        - 'relationId'
+      parent : 'N'
+    
+    - name : 'occurrence.value'
+      id_col : 'name'
+      compare_cols : 
+        - 'type'
+        - 'value'
+        - 'valueType'
+      unique_cols :
+        - 'name'
+        - 'type'
+      display_cols : 
+        - 'id'
+        - 'name'
+        - 'type'
+      parent : 'N'
+      
+    - name : 'occurrence.option'
+      id_col : 'type'
+      compare_cols : 
+        - 'value'
+      unique_cols :
+        - 'type'
+      display_cols : 
+        - 'id'
+        - 'type'
+      parent : 'N'
+      
+    - name : 'entityRelation.part'
+      id_col : 'partId'
+      compare_cols : 
+        - 'forPublishing'
+        - 'forUI'
+      unique_cols :
+        - 'partId'
+      display_cols : 
+        - 'id'
+        - 'definition'
+      parent : 'N'
+    
+    - name : 'naturalKey.part'
+      id_col : 'beFieldId'
+      compare_cols : 
+        - 'beFieldId'
+      unique_cols :
+        - 'beFieldId'
+      display_cols : 
+        - 'id'
+        - 'definition'
+      parent : 'N'
