@@ -1,0 +1,55 @@
+[
+	{
+		"deptno" : "D01",
+		"dname" : "Sales",
+		"location" : 
+			{
+				"name" : "Mumbai",
+				"area" : "Andheri"
+			}
+		"employees" :
+			[
+				{
+					"empno" : "E01",
+					"ename" : "Albert",
+					"desig" : "Manager"
+				},
+				{
+					"empno" : "E02",
+					"ename" : "Markus",
+					"desig" : "Officer"
+				}
+			]
+	},
+	{
+		"deptno" : "D02",
+		"dname" : "Accounts",
+		"location" : 
+			{
+				"name" : "Mumbai",
+				"area" : "Coloba"
+			}
+		"employees" :
+			[
+				{
+					"empno" : "E03",
+					"ename" : "Kumar",
+					"desig" : "Manager"
+				},
+				{
+					"empno" : "E04",
+					"ename" : "Siraj",
+					"desig" : "Officer"
+				}
+			]
+	},
+	{
+		"deptno" : "D02",
+		"dname" : "Production",
+		"location" : 
+			{
+				"name" : "Pune",
+				"area" : "Hinjewadi"
+			}
+	}
+]

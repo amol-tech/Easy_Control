@@ -1,0 +1,29 @@
+[
+	{
+		"deptno" : "D01",
+		"dname" : "Sales",
+		"location" : 
+			{
+				"city" : "Mumbai",
+				"suburb" : "Andheri"
+			}
+	},
+	{
+		"deptno" : "D02",
+		"dname" : "Accounts",
+		"location" : 
+			{
+				"city" : "Mumbai",
+				"suburb" : "Coloba"
+			}
+	},
+	{
+		"deptno" : "D03",
+		"dname" : "Production",
+		"location" : 
+			{
+				"city" : "Pune",
+				"suburb" : "Hinjewadi"
+			}
+	}
+]

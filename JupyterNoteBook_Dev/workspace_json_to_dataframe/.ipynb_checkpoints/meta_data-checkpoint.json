@@ -1,0 +1,2392 @@
+{
+  "QLIBase": {
+    "type": "object",
+    "properties": {
+      "InstrumentDetails": {
+        "type": "object",
+        "properties": {
+          "Issuer": {
+            "type": "object",
+            "properties": {
+              "IssuerInformation": {
+                "type": "object",
+                "properties": {
+                  "IssuerName": {
+                    "type": "string"
+                  },
+                  "PreferredIssuerIdentifierType": {
+                    "type": "string"
+                  },
+                  "IssuerLongName": {
+                    "type": "string"
+                  },
+                  "PreferredIssuerIdentifier": {
+                    "type": "string"
+                  }
+                }
+              },
+              "ISOGeographicDetails": {
+                "type": "object",
+                "properties": {
+                  "CountryOfDomicile": {
+                    "type": "string"
+                  }
+                }
+              },
+              "IssuerIdentifiers": {
+                "type": "object",
+                "properties": {
+                  "BBCompanyIdentifier": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "PreferredInstrumentName": {
+            "type": "string"
+          },
+          "PreferredInstrumentDescription": {
+            "type": "string"
+          },
+          "PreferredIdentifierType": {
+            "type": "string"
+          },
+          "PreferredIdentifierValue": {
+            "type": "string"
+          },
+          "InstrumentType": {
+            "type": "string"
+          },
+          "InstrumentAlphaSearch": {
+            "type": "string"
+          },
+          "PrincipalCurrency": {
+            "type": "string"
+          },
+          "ParValue": {
+            "type": "number"
+          },
+          "ParValueType": {
+            "type": "string"
+          },
+          "UnitOfMeasure": {
+            "type": "string"
+          },
+          "UnitSize": {
+            "type": "number"
+          },
+          "PricingMethod": {
+            "type": "string"
+          },
+          "IssueDate": {
+            "type": "object"
+          },
+          "MaturityDate": {
+            "type": "object"
+          },
+          "InstrumentSystemStatus": {
+            "type": "string"
+          },
+          "StatusReason": {
+            "type": "string"
+          },
+          "ActiveUntil": {
+            "type": "string"
+          },
+          "CreatedDate": {
+            "type": "string"
+          },
+          "ClassType": {
+            "type": "string"
+          },
+          "Series": {
+            "type": "string"
+          },
+          "SecurityForm": {
+            "type": "string"
+          },
+          "ISSUDaysToSettlement": {
+            "type": "string"
+          },
+          "InvestmentClosingDate": {
+            "type": "object"
+          },
+          "MaturityExpirationExtensionDate": {
+            "type": "object"
+          },
+          "TradingRestriction": {
+            "type": "string"
+          },
+          "TypeOfEarningsForLife": {
+            "type": "string"
+          },
+          "HybridIndicator": {
+            "type": "string"
+          },
+          "BBSecurityDescription": {
+            "type": "string"
+          },
+          "Objective": {
+            "type": "string"
+          },
+          "CreatedDataProvider": {
+            "type": "string"
+          },
+          "InstrumentOriginalDataProvider": {
+            "type": "string"
+          },
+          "TBAEligibleType": {
+            "type": "string"
+          },
+          "PricingMultiplier": {
+            "type": "number"
+          },
+          "InstrumentRateText": {
+            "type": "string"
+          },
+          "MaturityValueLinkedToType": {
+            "type": "string"
+          },
+          "InstrumentActivityStatusDateTime": {
+            "type": "string"
+          },
+          "DefaultTradingStatus": {
+            "type": "string"
+          },
+          "StructuredSecurityFeature": {
+            "type": "string"
+          },
+          "AccessAuthority": {
+            "type": "string"
+          },
+          "OriginalMaturityExpirationDate": {
+            "type": "object"
+          },
+          "MaturityDateType": {
+            "type": "string"
+          },
+          "SecurityLendingEligibleIndicator": {
+            "type": "string"
+          },
+          "DataRedistributorId": {
+            "type": "string"
+          },
+          "BookEntryClearingCorporation": {
+            "type": "string"
+          },
+          "MarketTradingEligibleIndicator": {
+            "type": "string"
+          },
+          "AlternativeAssetClassText": {
+            "type": "string"
+          },
+          "FinancialInstrumentShortName": {
+            "type": "string"
+          },
+          "LiquidationRightRanking": {
+            "type": "string"
+          },
+          "AVRExemptIndicator": {
+            "type": "string"
+          },
+          "CreatedByRedistributorID": {
+            "type": "string"
+          },
+          "GovernmentSupportIndicator": {
+            "type": "string"
+          },
+          "MonitorRestrictionCode": {
+            "type": "string"
+          },
+          "MinimumNetWorthBalanceIndicator": {
+            "type": "string"
+          },
+          "MostFavoredLenderProvisionIndicator": {
+            "type": "string"
+          },
+          "PrincipalBasis": {
+            "type": "string"
+          },
+          "RatingMaintenanceProvisionIndicator": {
+            "type": "string"
+          },
+          "RepackagedSecurityIndicator": {
+            "type": "string"
+          },
+          "StructuredSecurityIndicator": {
+            "type": "string"
+          },
+          "SubstitutionClauseIndicator": {
+            "type": "string"
+          },
+          "TransferRestrictionIndicator": {
+            "type": "string"
+          },
+          "InstrumentDefaultDateTime": {
+            "type": "object"
+          },
+          "MarketListType": {
+            "type": "string"
+          },
+          "DeliverabilityReason": {
+            "type": "string"
+          },
+          "DeliverableIndicator": {
+            "type": "string"
+          },
+          "WithholdingTaxLeviedAtSource": {
+            "type": "string"
+          },
+          "InstrumentLastChangeDate": {
+            "type": "object"
+          },
+          "InstrumentLastChangeUser": {
+            "type": "string"
+          },
+          "InstrumentDataSource": {
+            "type": "string"
+          },
+          "InstrumentDataStatus": {
+            "type": "string"
+          }
+        }
+      },
+      "ExtendedIdentifiers": {
+        "type": "object",
+        "properties": {
+          "IdentifierMarket": {
+            "type": "object",
+            "properties": {
+              "MarketDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketName": {
+                    "type": "string"
+                  },
+                  "MICCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "IdentifierValue": {
+            "type": "string"
+          },
+          "IdentifierType": {
+            "type": "string"
+          },
+          "IdentifierEffectiveDate": {
+            "type": "string"
+          },
+          "InstrumentUsage": {
+            "type": "string"
+          },
+          "IdentifierTradingCurrency": {
+            "type": "string"
+          },
+          "TargetCurrencyCode": {
+            "type": "string"
+          },
+          "GlobalUniqueIndicator": {
+            "type": "string"
+          },
+          "WhenIssuedInd": {
+            "type": "string"
+          },
+          "ListingSymbolIndicator": {
+            "type": "string"
+          },
+          "ErgonomicSymbolIndicator": {
+            "type": "string"
+          },
+          "TraderSymbolIndicator": {
+            "type": "string"
+          },
+          "MultiSEDOLSymbolIndicator": {
+            "type": "string"
+          },
+          "InstrumentSymbolStatus": {
+            "type": "string"
+          },
+          "WhenDistributedIndicator": {
+            "type": "string"
+          },
+          "PrimaryTradableMarketQuote": {
+            "type": "string"
+          }
+        }
+      },
+      "AllInstrumentIdentifiers": {
+        "type": "object",
+        "properties": {
+          "IdentifierMarketLookup": {
+            "type": "object",
+            "properties": {
+              "MarketDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "AllIdentifierValue": {
+            "type": "string"
+          },
+          "AllIdentifierIDContext": {
+            "type": "string"
+          },
+          "AllIdentifierInstrumentUsage": {
+            "type": "string"
+          },
+          "AllIdentifierInstrumentTenor": {
+            "type": "string"
+          },
+          "AllIdentifierInstrumentSymbolStatus": {
+            "type": "string"
+          },
+          "AllIdentifierErgonomicSymbolInd": {
+            "type": "string"
+          },
+          "AllIdentifierGlobalUniqueIndicator": {
+            "type": "string"
+          },
+          "AllIdentifierListingSymbolInd": {
+            "type": "string"
+          },
+          "AllIdentifierMultiSedolSymbolInd": {
+            "type": "string"
+          },
+          "AllIdentifierNotTradableIndicator": {
+            "type": "string"
+          },
+          "AllIdentifierOriginalDataProvider": {
+            "type": "string"
+          },
+          "AllIdentifierlPreliminaryTermsProspectusInd": {
+            "type": "string"
+          },
+          "AllIdentifierPrimaryTradableMarketQuoteIndicator": {
+            "type": "string"
+          },
+          "AllIdentifierRootSymbol": {
+            "type": "string"
+          },
+          "AllIdentifierSourceCurrencyCode": {
+            "type": "string"
+          },
+          "AllIdentifierStartDateTime": {
+            "type": "string"
+          },
+          "AllIdentifierTargetCurrencyCode": {
+            "type": "string"
+          },
+          "AllIdentifierTraderSymbolInd": {
+            "type": "string"
+          },
+          "AllIdentifierTradingCurrency": {
+            "type": "string"
+          },
+          "AllIdentifierWhenDistributedFlagIndicator": {
+            "type": "string"
+          },
+          "AllIdentifierWhenIssuedIndicator": {
+            "type": "string"
+          },
+          "AllIdentifierMergeUniquenessOID": {
+            "type": "string"
+          },
+          "AllIdentifierDataSourceID": {
+            "type": "string"
+          },
+          "AllIdentifierDataStatus": {
+            "type": "string"
+          },
+          "AllIdentifierEndDateTime": {
+            "type": "string"
+          },
+          "AllIdentifierLastChangeDateTime": {
+            "type": "string"
+          },
+          "AllIdentifierLastChangeUserID": {
+            "type": "string"
+          }
+        }
+      },
+      "PrimaryMarket": {
+        "type": "object",
+        "properties": {
+          "PrimaryMarketRelation": {
+            "type": "object",
+            "properties": {
+              "MarketDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketName": {
+                    "type": "string"
+                  },
+                  "MICCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "PrimaryMktSettlementDetails": {
+            "type": "object",
+            "properties": {
+              "PrimaryMktSettlementInd": {
+                "type": "string"
+              }
+            }
+          },
+          "PrimaryMktExtMktFeatures": {
+            "type": "object",
+            "properties": {
+              "PrimaryMktStatsAmt": {
+                "type": "number"
+              },
+              "PrimaryMktStatsText": {
+                "type": "string"
+              },
+              "PrimaryMktStatsCurrency": {
+                "type": "string"
+              },
+              "PrimaryMktStatsDataSrcId": {
+                "type": "string"
+              },
+              "PrimaryMktStatsDateTime": {
+                "type": "string"
+              },
+              "PrimaryMktStatsDate": {
+                "type": "object"
+              },
+              "PrimaryMktStatsDefId": {
+                "type": "string"
+              },
+              "PrimaryMktStatsEndDateTime": {
+                "type": "string"
+              },
+              "PrimaryMktStatsInteger": {
+                "type": "string"
+              },
+              "PrimaryMktStatsStartDateTime": {
+                "type": "string"
+              }
+            }
+          },
+          "PrimaryMktAllMarketLevelIdentifiers": {
+            "type": "object",
+            "properties": {
+              "PrimaryMktAllIdentifierType": {
+                "type": "string"
+              },
+              "PrimaryMktAllIdentifierValue": {
+                "type": "string"
+              },
+              "PrimaryMktAllInstrumentUsage": {
+                "type": "string"
+              },
+              "PrimaryMktAllIdentifierEffectiveDate": {
+                "type": "object"
+              }
+            }
+          },
+          "PrimaryMktRegulatoryValues": {
+            "type": "object",
+            "properties": {
+              "RegValPrimMktEffectiveDateTime": {
+                "type": "string"
+              },
+              "RegValPrimMktFirstTradingDateTime": {
+                "type": "string"
+              },
+              "RegValPrimMktIssuerApprovalTradingDateTime": {
+                "type": "string"
+              },
+              "RegValPrimMktIssuerRequestTradingDateTime": {
+                "type": "string"
+              },
+              "RegValPrimMktIssuerRequestedInd": {
+                "type": "string"
+              },
+              "RegValPrimMktLastTradingDateTime": {
+                "type": "string"
+              },
+              "RegValPrimMktRegulatoryAuthorityName": {
+                "type": "string"
+              },
+              "RegValPrimMktRegulatoryStatusType": {
+                "type": "string"
+              },
+              "RegValPrimMktRegulatoryType": {
+                "type": "string"
+              },
+              "RegValPrimMktTradingUnderWaiver12MonthPercent": {
+                "type": "number"
+              }
+            }
+          },
+          "PrimaryMktAllTradingFeatures": {
+            "type": "object",
+            "properties": {
+              "AllTrdStatsPrimMktLst1MonthShortInterestNetChange": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLst1MonthShortInterestPercent": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLst1MonthShortInterestValue": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLst52WeekHighPrice": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLst52WeekHighPriceDate": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLst52WeekLowPrice": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLst52WeekLowPriceDate": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLstAverageDailyTransaction": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageDailyTurnover": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageTransactionValue": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageTransactionVolume": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageVolume100Day": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageVolume10Day": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageVolume30Day": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageVolume3Month": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAverageVolume6Month": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstAvgVolume5Day": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstNextSettlementDate": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLstRegulatorySource": {
+                "type": "string"
+              },
+              "AllTrdStatsPrimMktLstShortInterest": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstShortInterestRatio": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstStatisticsCurrency": {
+                "type": "string"
+              },
+              "AllTrdStatsPrimMktLstStatisticsEffectiveDateTime": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLstTradingSessionType": {
+                "type": "string"
+              },
+              "AllTrdStatsPrimMktLstTurnoverVolumeAmount": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstVolumeWeightedAveragePrice": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstVWAPDate": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLstVWAPVolume": {
+                "type": "number"
+              },
+              "AllTrdStatsPrimMktLstVWAPNumTrades": {
+                "type": "string"
+              },
+              "AllTrdStatsPrimMktLstVWAPStartTime": {
+                "type": "object"
+              },
+              "AllTrdStatsPrimMktLstVWAPEndTime": {
+                "type": "object"
+              }
+            }
+          },
+          "PrimaryMktTradingStatistics": {
+            "type": "object",
+            "properties": {
+              "PrimMktTradingStats1MonthShortInterestNetChange": {
+                "type": "number"
+              },
+              "PrimMktTradingStats1MonthShortInterestPercent": {
+                "type": "number"
+              },
+              "PrimMktTradingStats1MonthShortInterestValue": {
+                "type": "number"
+              },
+              "PrimMktTradingStats52WeekHighPrice": {
+                "type": "number"
+              },
+              "PrimMktTradingStats52WeekHighPriceDate": {
+                "type": "object"
+              },
+              "PrimMktTradingStats52WeekLowPrice": {
+                "type": "number"
+              },
+              "PrimMktTradingStats52WeekLowPriceDate": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsAverageDailyTransaction": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsAverageDailyTurnover": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsAverageTransactionValue": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsAverageTransactionVolume": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsAvgVolume5Day": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsDataRedistributorID": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsNextSettlementDate": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsOriginalDataProvider": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsRegulatorySource": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsShortInterest": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsShortInterestRatio": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsStatisticsCurrency": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsStatisticsEffectiveDateTime": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsTradingSessionType": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsTurnoverVolumeAmount": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsVWAPDate": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsVWAPEndTime": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsVWAPNumTrades": {
+                "type": "string"
+              },
+              "PrimMktTradingStatsVWAPStartTime": {
+                "type": "object"
+              },
+              "PrimMktTradingStatsVWAPVolume": {
+                "type": "number"
+              },
+              "PrimMktTradingStatsVolumeWeightedAveragePrice": {
+                "type": "number"
+              }
+            }
+          },
+          "PrimMktLstComments": {
+            "type": "object",
+            "properties": {
+              "PrimMktLstInstCommentReason": {
+                "type": "string"
+              },
+              "PrimMktLstInstLineNumber": {
+                "type": "string"
+              },
+              "PrimMktLstInstCommentText": {
+                "type": "string"
+              },
+              "PrimMktLstInstLanguage": {
+                "type": "string"
+              },
+              "PrimMktLstInstCommentDateTime": {
+                "type": "object"
+              },
+              "PrimMktLstInstCommentStatus": {
+                "type": "string"
+              }
+            }
+          },
+          "PrimaryMktTradingStatus": {
+            "type": "object",
+            "properties": {
+              "PrimMktInstrTradingStatus": {
+                "type": "string"
+              },
+              "PrimMktInstrTradingStatusText": {
+                "type": "string"
+              },
+              "PrimMktInstrTradingStatusDateTime": {
+                "type": "object"
+              }
+            }
+          },
+          "PrimaryMarketRoundLot": {
+            "type": "number"
+          },
+          "PrimaryMarketTradeLotSize": {
+            "type": "number"
+          },
+          "PrimaryMarketTradingCurrency": {
+            "type": "string"
+          },
+          "PrimaryMarketTradingInd": {
+            "type": "string"
+          },
+          "PrimaryMarketStatus": {
+            "type": "string"
+          },
+          "PrimaryMarketPriceCurrencyCode": {
+            "type": "string"
+          },
+          "PrimaryMarketPriceMultiplier": {
+            "type": "number"
+          },
+          "PrimaryMarketTradingUnitOfMeasure": {
+            "type": "string"
+          },
+          "PrimaryMarketTradingCountry": {
+            "type": "string"
+          },
+          "PrimaryMarketOriginalPlaceOfListingInd": {
+            "type": "string"
+          },
+          "PrimaryMarketDaysToSettlement": {
+            "type": "string"
+          },
+          "PrimaryMarketDaysToSettlementText": {
+            "type": "string"
+          },
+          "PrimaryMarketHomeStockExchangeIndicator": {
+            "type": "string"
+          },
+          "PrimaryMarketBBUnique": {
+            "type": "string"
+          },
+          "PrimaryMarketBBGlobal": {
+            "type": "string"
+          },
+          "PrimaryMarketRIC": {
+            "type": "string"
+          },
+          "PrimaryMarketSEDOL": {
+            "type": "string"
+          },
+          "PrimaryMarketTKTradingSymbol": {
+            "type": "string"
+          },
+          "PrimaryMarketReutersTradingSymbol": {
+            "type": "string"
+          },
+          "PrimaryMarketBBTradingSymbol": {
+            "type": "string"
+          },
+          "PrimaryMktBBCompanySecurity": {
+            "type": "string"
+          },
+          "PrimaryMktReutersTicker": {
+            "type": "string"
+          },
+          "PrimaryMktIrishSedol": {
+            "type": "string"
+          },
+          "PrimaryMktBBUniqueTicker": {
+            "type": "string"
+          },
+          "PrimaryMktBBFullExchangeSymbol": {
+            "type": "string"
+          },
+          "PrimaryMktBBCompanySecurityWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktBBGlobalWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktBBTickerAndExchCodeWI": {
+            "type": "string"
+          },
+          "PrimaryMktBBTradingSymbolWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktBBUniqueIDWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktRICWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktReutersTickerWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMktReutersTradingSymbolWI": {
+            "type": "string"
+          },
+          "PrimaryMktTickerWhenIssued": {
+            "type": "string"
+          },
+          "PrimaryMarketTicker": {
+            "type": "string"
+          },
+          "PrimaryMktSecurityPrimaryExchCode": {
+            "type": "string"
+          },
+          "PrimaryMktSecurityCompositeExchange": {
+            "type": "string"
+          },
+          "PrimaryMktExchangeCode": {
+            "type": "string"
+          },
+          "PrimaryMktWarrantTicker": {
+            "type": "string"
+          },
+          "PrimaryMktOptionRootTicker": {
+            "type": "string"
+          },
+          "PrimaryMktCA4LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCA5LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCA6LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCA7LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCA8LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCDRExchangeCode": {
+            "type": "string"
+          },
+          "PrimaryMktCESREEARegulated": {
+            "type": "string"
+          },
+          "PrimaryMktCESRMostRelevantMarket": {
+            "type": "string"
+          },
+          "PrimaryMktCS4LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCS7LocalIndexConstituentMarker": {
+            "type": "string"
+          },
+          "PrimaryMktCommissionCodeMarker": {
+            "type": "string"
+          },
+          "PrimaryMktConsolidatedRIC": {
+            "type": "string"
+          },
+          "PrimaryMktEquityPrimaryExchangeShort": {
+            "type": "string"
+          },
+          "PrimaryMktExchangeIdentifier": {
+            "type": "string"
+          },
+          "PrimaryMktExchangeMarketGroup": {
+            "type": "string"
+          },
+          "PrimaryMktExchangeSubMarketGroup": {
+            "type": "string"
+          },
+          "PrimaryMktIndCountryDomicileOPOLIsSame": {
+            "type": "string"
+          },
+          "PrimaryMktLSESectorClassification": {
+            "type": "string"
+          },
+          "PrimaryMktLSESegmentClassification": {
+            "type": "string"
+          },
+          "PrimaryMktMIC": {
+            "type": "string"
+          },
+          "PrimaryMktMIC1": {
+            "type": "string"
+          },
+          "PrimaryMktMIC2": {
+            "type": "string"
+          },
+          "PrimaryMktMIC3": {
+            "type": "string"
+          },
+          "PrimaryMktMIC4": {
+            "type": "string"
+          },
+          "PrimaryMktMIC5": {
+            "type": "string"
+          },
+          "PrimaryMktMICForLocalExchange": {
+            "type": "string"
+          },
+          "PrimaryMktMarketMIC": {
+            "type": "string"
+          },
+          "PrimaryMktMarketSegmentName": {
+            "type": "string"
+          },
+          "PrimaryMktMinorTradingCurrency": {
+            "type": "string"
+          },
+          "PrimaryMktMrktExchSectionSecurityAppearsIn": {
+            "type": "string"
+          },
+          "PrimaryMktMrktStatsIPOPrice": {
+            "type": "string"
+          },
+          "PrimaryMktOPOLCode": {
+            "type": "string"
+          },
+          "PrimaryMktOnJASDAQMarketMakerIndicator": {
+            "type": "string"
+          },
+          "PrimaryMktOpenEndShareClass": {
+            "type": "string"
+          },
+          "PrimaryMktOutstandingShares": {
+            "type": "number"
+          },
+          "PrimaryMktOutstandingSharesDate": {
+            "type": "object"
+          },
+          "PrimaryMktPlaceofListingFlag": {
+            "type": "string"
+          },
+          "PrimaryMktPrimaryExchangeMIC": {
+            "type": "string"
+          },
+          "PrimaryMktPrimaryExecutionVenue": {
+            "type": "string"
+          },
+          "PrimaryMktPrimaryReferenceMarketQuote": {
+            "type": "string"
+          },
+          "PrimaryMktPrimarySedol": {
+            "type": "string"
+          },
+          "PrimaryMktRelativeIndex": {
+            "type": "string"
+          },
+          "PrimaryMktSecurityEventDate": {
+            "type": "object"
+          },
+          "PrimaryMktIssueType": {
+            "type": "string"
+          },
+          "PrimaryMktStartDateTime": {
+            "type": "string"
+          },
+          "PrimaryMktTradingAdmissionApprovalDate": {
+            "type": "string"
+          },
+          "PrimaryMktSecurityStatusAndEvent": {
+            "type": "string"
+          },
+          "PrimaryMktRequestforAdmissiontoTradingbyIssuer": {
+            "type": "string"
+          },
+          "PrimaryMktSituationMarkerL": {
+            "type": "string"
+          },
+          "PrimaryMktLastChangeUserId": {
+            "type": "string"
+          },
+          "PrimaryMktTradingAdmissionRequestDate": {
+            "type": "string"
+          },
+          "PrimaryMktFirstTradingDateTime": {
+            "type": "string"
+          },
+          "PrimaryMktTRPrimaryTicker": {
+            "type": "string"
+          },
+          "PrimaryMarketSettlementMethod": {
+            "type": "string"
+          },
+          "PrimaryMktLastTradingDateTime": {
+            "type": "string"
+          },
+          "PrimaryMktLastChangeDateTime": {
+            "type": "string"
+          },
+          "PrimaryMktTradingSystemIdentifier": {
+            "type": "string"
+          },
+          "PrimaryMiFIDAverageDailyTurnover": {
+            "type": "number"
+          },
+          "PrimaryMktVolume": {
+            "type": "string"
+          },
+          "PrimaryMiFIDAverageDailyTurnoverCurrencyCode": {
+            "type": "string"
+          },
+          "PrimaryMktDataSourceId": {
+            "type": "string"
+          },
+          "PrimaryMiFIDAverageValueOfOrdersExecuted": {
+            "type": "number"
+          },
+          "PrimaryMktExchStockConnectQuoteStatus": {
+            "type": "string"
+          },
+          "PrimaryMktSettleCurrencyCode": {
+            "type": "string"
+          },
+          "PrimaryMktExchStockConnectType": {
+            "type": "string"
+          },
+          "PrimaryMarketListingQualificationType": {
+            "type": "string"
+          },
+          "PrimaryNCAAverageDailyTurnover": {
+            "type": "number"
+          },
+          "PrimaryNCAAverageDailyTurnoverCurrencyCode": {
+            "type": "string"
+          },
+          "PrimaryNCAAverageValueOfOrdersExecuted": {
+            "type": "number"
+          },
+          "PrimaryMktDelistingDateTime": {
+            "type": "object"
+          },
+          "PrimaryMktActivelyTradedInd": {
+            "type": "string"
+          },
+          "PrimaryMktListingDate": {
+            "type": "object"
+          },
+          "PrimaryMktPricingUnitOfMeasure": {
+            "type": "string"
+          }
+        }
+      },
+      "MarketListing": {
+        "type": "object",
+        "properties": {
+          "ListedOn": {
+            "type": "object",
+            "properties": {
+              "MarketDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketName": {
+                    "type": "string"
+                  },
+                  "MICCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "MarketFeatures": {
+            "type": "object",
+            "properties": {
+              "CDRExchangeCode": {
+                "type": "string"
+              },
+              "CESREEARegulated": {
+                "type": "string"
+              },
+              "ConsolidatedRIC": {
+                "type": "string"
+              },
+              "PrimaryExchangeMIC": {
+                "type": "string"
+              },
+              "MIC": {
+                "type": "string"
+              },
+              "MICForLocalExchange": {
+                "type": "string"
+              },
+              "MarketSegmentName": {
+                "type": "string"
+              },
+              "OnJASDAQMarketMakerIndicator": {
+                "type": "string"
+              },
+              "OpenEndShareClass": {
+                "type": "string"
+              },
+              "OPOLCode": {
+                "type": "string"
+              },
+              "IndCountryDomicileOPOLIsSame": {
+                "type": "string"
+              },
+              "PrimaryReferenceMarketQuote": {
+                "type": "string"
+              },
+              "RelativeIndex": {
+                "type": "string"
+              },
+              "PrimaryExecutionVenue": {
+                "type": "string"
+              },
+              "ExchangeIdentifier": {
+                "type": "string"
+              },
+              "CESRMostRelevantMarket": {
+                "type": "string"
+              },
+              "PlaceofListingFlag": {
+                "type": "string"
+              },
+              "LSESegmentClassification": {
+                "type": "string"
+              },
+              "LSESectorClassification": {
+                "type": "string"
+              },
+              "EquityPrimaryExchangeShort": {
+                "type": "string"
+              },
+              "ExchangeMarketGroup": {
+                "type": "string"
+              },
+              "ExchangeSubMarketGroup": {
+                "type": "string"
+              },
+              "MinorTradingCurrency": {
+                "type": "string"
+              },
+              "CA4LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CA5LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CA6LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CA7LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CA8LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CS4LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CS7LocalIndexConstituentMarker": {
+                "type": "string"
+              },
+              "CommissionCodeMarker": {
+                "type": "string"
+              },
+              "MrktExchSectionSecurityAppearsIn": {
+                "type": "string"
+              },
+              "MrktStatsIPOPrice": {
+                "type": "string"
+              },
+              "MarketMIC": {
+                "type": "string"
+              },
+              "MrktStatsSplitAdjIPOPrice": {
+                "type": "number"
+              },
+              "OutstandingShares": {
+                "type": "number"
+              },
+              "OutstandingSharesDate": {
+                "type": "object"
+              },
+              "PrimarySedol": {
+                "type": "string"
+              },
+              "TRPrimaryTicker": {
+                "type": "string"
+              },
+              "SecurityStatusAndEvent": {
+                "type": "string"
+              },
+              "SecurityEventDate": {
+                "type": "object"
+              },
+              "SituationMarkerL": {
+                "type": "string"
+              },
+              "MIC1": {
+                "type": "string"
+              },
+              "MIC2": {
+                "type": "string"
+              },
+              "MIC3": {
+                "type": "string"
+              },
+              "MIC4": {
+                "type": "string"
+              },
+              "MIC5": {
+                "type": "string"
+              }
+            }
+          },
+          "MarketLevelIdentifiers": {
+            "type": "object",
+            "properties": {
+              "WhenIssuedMarketLevelIdentifiers": {
+                "type": "object",
+                "properties": {
+                  "BBTradingSymbolWhenIssued": {
+                    "type": "string"
+                  },
+                  "BBTickerAndExchangeCodeWhenIssued": {
+                    "type": "string"
+                  },
+                  "TickerWhenIssued": {
+                    "type": "string"
+                  },
+                  "BBCompanySecurityWhenIssued": {
+                    "type": "string"
+                  },
+                  "BBGlobalWhenIssued": {
+                    "type": "string"
+                  },
+                  "BBUniqueIDWhenIssued": {
+                    "type": "string"
+                  },
+                  "RICWhenIssued": {
+                    "type": "string"
+                  },
+                  "ReutersTickerWhenIssued": {
+                    "type": "string"
+                  },
+                  "ReutersTradingSymbolWhenIssued": {
+                    "type": "string"
+                  },
+                  "TradingSystemIdentifierWhenIssued": {
+                    "type": "string"
+                  }
+                }
+              },
+              "MarketLevelSettlementDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketLevelSSIInd": {
+                    "type": "string"
+                  }
+                }
+              },
+              "BBFullExchangeSymbol": {
+                "type": "string"
+              },
+              "BBGlobal": {
+                "type": "string"
+              },
+              "BBCompanySecurity": {
+                "type": "string"
+              },
+              "BBTradingSymbol": {
+                "type": "string"
+              },
+              "BBUniqueID": {
+                "type": "string"
+              },
+              "BBUniqueTicker": {
+                "type": "string"
+              },
+              "PrimaryExchangeCode": {
+                "type": "string"
+              },
+              "PrimarySecurityCompositeExchange": {
+                "type": "string"
+              },
+              "PrimarySecurityPrimaryExchCode": {
+                "type": "string"
+              },
+              "RIC": {
+                "type": "string"
+              },
+              "Ticker": {
+                "type": "string"
+              },
+              "ReutersTradingSymbol": {
+                "type": "string"
+              },
+              "TKTradingSymbol": {
+                "type": "string"
+              },
+              "WarrantTicker": {
+                "type": "string"
+              },
+              "IrishSEDOL": {
+                "type": "string"
+              },
+              "SEDOLListing": {
+                "type": "string"
+              },
+              "ReutersTicker": {
+                "type": "string"
+              },
+              "OptionRootTicker": {
+                "type": "string"
+              },
+              "ExchangeTicker": {
+                "type": "string"
+              },
+              "TradingSystemIdentifier": {
+                "type": "string"
+              }
+            }
+          },
+          "ExtendedMarketFeatures": {
+            "type": "object",
+            "properties": {
+              "ExtMrktStatsDefId": {
+                "type": "string"
+              },
+              "ExtMrktStatsText": {
+                "type": "string"
+              },
+              "ExtMrktStatsAmt": {
+                "type": "number"
+              },
+              "ExtMrktStatsInteger": {
+                "type": "string"
+              },
+              "ExtMrktStatsDate": {
+                "type": "object"
+              },
+              "ExtMrktStatsDateTime": {
+                "type": "string"
+              },
+              "ExtMrktStatsCurrency": {
+                "type": "string"
+              },
+              "ExtMrktStatsStartDateTime": {
+                "type": "string"
+              },
+              "ExtMrktStatsDataSrcId": {
+                "type": "string"
+              }
+            }
+          },
+          "IssueTradingFeatures": {
+            "type": "object",
+            "properties": {
+              "MiFIDAverageDailyTurnover": {
+                "type": "number"
+              },
+              "MiFIDAverageDailyTurnoverCurrencyCode": {
+                "type": "string"
+              },
+              "MiFIDAverageValueOfOrdersExecuted": {
+                "type": "number"
+              },
+              "NCAAverageDailyTurnover": {
+                "type": "number"
+              },
+              "NCAAverageDailyTurnoverCurrencyCode": {
+                "type": "string"
+              },
+              "NCAAverageValueOfOrdersExecuted": {
+                "type": "number"
+              }
+            }
+          },
+          "AllMktLevelIdentifiers": {
+            "type": "object",
+            "properties": {
+              "AllMktIdentifier": {
+                "type": "string"
+              },
+              "AllMktIdentifierType": {
+                "type": "string"
+              },
+              "AllMktIdentifierEffectiveDate": {
+                "type": "object"
+              },
+              "AllMktInstrumentUsage": {
+                "type": "string"
+              }
+            }
+          },
+          "AllTradingFeaturesMktListing": {
+            "type": "object",
+            "properties": {
+              "AllTrdStatsMktLst1MonthShortInterestNetChange": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLst1MonthShortInterestPercent": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLst1MonthShortInterestValue": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLst52WeekHighPrice": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLst52WeekHighPriceDate": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLst52WeekLowPrice": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLst52WeekLowPriceDate": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLstAverageDailyTransaction": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageDailyTurnover": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageTransactionValue": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageTransactionVolume": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageVolume100Day": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageVolume10Day": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageVolume30Day": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageVolume3Month": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAverageVolume6Month": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstAvgVolume5Day": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstNextSettlementDate": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLstRegulatorySource": {
+                "type": "string"
+              },
+              "AllTrdStatsMktLstShortInterest": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstShortInterestRatio": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstStatisticsCurrency": {
+                "type": "string"
+              },
+              "AllTrdStatsMktLstStatisticsEffectiveDateTime": {
+                "type": "string"
+              },
+              "AllTrdStatsMktLstTradingSessionType": {
+                "type": "string"
+              },
+              "AllTrdStatsMktLstTurnoverVolumeAmount": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstVWAPDate": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLstVWAPEndTime": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLstVWAPNumTrades": {
+                "type": "string"
+              },
+              "AllTrdStatsMktLstVWAPStartTime": {
+                "type": "object"
+              },
+              "AllTrdStatsMktLstVWAPVolume": {
+                "type": "number"
+              },
+              "AllTrdStatsMktLstVolumeWeightedAveragePrice": {
+                "type": "number"
+              }
+            }
+          },
+          "ListingLevelRegulatoryValue": {
+            "type": "object",
+            "properties": {
+              "RegValMktLstFirstTradingDateTime": {
+                "type": "string"
+              },
+              "RegValMktLstIssuerApprovalTradingDate": {
+                "type": "string"
+              },
+              "RegValMktLstIssuerRequestTradingIndicator": {
+                "type": "string"
+              },
+              "RegValMktLstIssuerRequestedTradingDate": {
+                "type": "string"
+              },
+              "RegValMktLstLastTradingDateTime": {
+                "type": "string"
+              },
+              "RegValMktLstMktIssueRegValEffectiveDateTime": {
+                "type": "object"
+              },
+              "RegValMktLstRegulatoryAuthorityName": {
+                "type": "string"
+              },
+              "RegValMktLstRegulatoryStatusType": {
+                "type": "string"
+              },
+              "RegValMktLstRegulatoryType": {
+                "type": "string"
+              },
+              "RegValMktLstTradingUnderWaiver12MonthPercent": {
+                "type": "number"
+              }
+            }
+          },
+          "MktListingTradingStatistics": {
+            "type": "object",
+            "properties": {
+              "TradingStats1MonthShortInterestNetChange": {
+                "type": "number"
+              },
+              "TradingStats1MonthShortInterestPercent": {
+                "type": "number"
+              },
+              "TradingStats1MonthShortInterestValue": {
+                "type": "number"
+              },
+              "TradingStats52WeekHighPrice": {
+                "type": "number"
+              },
+              "TradingStats52WeekHighPriceDate": {
+                "type": "object"
+              },
+              "TradingStats52WeekLowPrice": {
+                "type": "number"
+              },
+              "TradingStats52WeekLowPriceDate": {
+                "type": "object"
+              },
+              "TradingStatsAverageDailyTransaction": {
+                "type": "number"
+              },
+              "TradingStatsAverageDailyTurnover": {
+                "type": "number"
+              },
+              "TradingStatsAverageTransactionValue": {
+                "type": "number"
+              },
+              "TradingStatsAverageTransactionVolume": {
+                "type": "number"
+              },
+              "TradingStatsAvgVolume5Day": {
+                "type": "number"
+              },
+              "TradingStatsDataRedistibutorId": {
+                "type": "string"
+              },
+              "TradingStatsNextSettlementDate": {
+                "type": "object"
+              },
+              "TradingStatsOriginalDataProvider": {
+                "type": "string"
+              },
+              "TradingStatsRegulatorySource": {
+                "type": "string"
+              },
+              "TradingStatsShortInterest": {
+                "type": "number"
+              },
+              "TradingStatsShortInterestRatio": {
+                "type": "number"
+              },
+              "TradingStatsStatisticsCurrency": {
+                "type": "string"
+              },
+              "TradingStatsStatisticsEffectiveDateTime": {
+                "type": "object"
+              },
+              "TradingStatsTradingSessionType": {
+                "type": "string"
+              },
+              "TradingStatsTurnoverVolumeAmount": {
+                "type": "number"
+              },
+              "TradingStatsVWAPDate": {
+                "type": "object"
+              },
+              "TradingStatsVWAPEndTime": {
+                "type": "object"
+              },
+              "TradingStatsVWAPNumTrades": {
+                "type": "string"
+              },
+              "TradingStatsVWAPStartTime": {
+                "type": "object"
+              },
+              "TradingStatsVWAPVolume": {
+                "type": "number"
+              },
+              "TradingStatsVolumeWeightedAveragePrice": {
+                "type": "number"
+              }
+            }
+          },
+          "InstitutionRoleMarketParticipant": {
+            "type": "object",
+            "properties": {
+              "FinsRoleMktParticipantPurpose": {
+                "type": "string"
+              },
+              "FinsRoleMktParticipantDescription": {
+                "type": "string"
+              },
+              "FinsRoleMktPreferredAuthorityIndicator": {
+                "type": "string"
+              },
+              "FinsRoleMktParticipationAmount": {
+                "type": "number"
+              },
+              "FinsRoleMktParticipationCurrency": {
+                "type": "string"
+              },
+              "FinsRoleMktParticipationPercent": {
+                "type": "number"
+              },
+              "FinsRoleMktStartDateTime": {
+                "type": "object"
+              }
+            }
+          },
+          "TradingStatus": {
+            "type": "object",
+            "properties": {
+              "InstrTradingStatus": {
+                "type": "string"
+              },
+              "InstrTradingStatusText": {
+                "type": "string"
+              },
+              "InstrTradingStatusDateTime": {
+                "type": "object"
+              }
+            }
+          },
+          "MktLstInstrComments": {
+            "type": "object",
+            "properties": {
+              "MktLstInstCommentDateTime": {
+                "type": "object"
+              },
+              "MktLstInstCommentReason": {
+                "type": "string"
+              },
+              "MktLstInstCommentStatus": {
+                "type": "string"
+              },
+              "MktLstInstCommentText": {
+                "type": "string"
+              },
+              "MktLstInstLineNumber": {
+                "type": "string"
+              },
+              "MktLstInstLanguage": {
+                "type": "string"
+              }
+            }
+          },
+          "RoundLot": {
+            "type": "number"
+          },
+          "TradingCurrency": {
+            "type": "string"
+          },
+          "NonPrimaryTradingInd": {
+            "type": "string"
+          },
+          "TradingCountry": {
+            "type": "string"
+          },
+          "MarketStatus": {
+            "type": "string"
+          },
+          "DaysToSettlementBuy": {
+            "type": "string"
+          },
+          "DaysToSettlementSell": {
+            "type": "string"
+          },
+          "ChinaConnectEligibleType": {
+            "type": "string"
+          },
+          "ChinaConnectQuoteStatusType": {
+            "type": "string"
+          },
+          "EquityOptionAvailableIndicator": {
+            "type": "string"
+          },
+          "HedgerInitialMarginLimit": {
+            "type": "string"
+          },
+          "HedgerMaintenanceMarginLimit": {
+            "type": "string"
+          },
+          "HomeStockExchangeIndicator": {
+            "type": "string"
+          },
+          "FirstExchangeTradeDate": {
+            "type": "string"
+          },
+          "LastTradingDate": {
+            "type": "string"
+          },
+          "ListingDate": {
+            "type": "object"
+          },
+          "MarketListingActiveUntil": {
+            "type": "string"
+          },
+          "MarketListingCreatedOn": {
+            "type": "string"
+          },
+          "PriceCurrencyCode": {
+            "type": "string"
+          },
+          "InstrumentPricingUnit": {
+            "type": "number"
+          },
+          "MultipleSharesIndicator": {
+            "type": "string"
+          },
+          "NormalMarketSize": {
+            "type": "number"
+          },
+          "TradingFloorLocation": {
+            "type": "string"
+          },
+          "OriginalPlaceOfListingIndicator": {
+            "type": "string"
+          },
+          "PriceMultiplier": {
+            "type": "number"
+          },
+          "PricingUnitOfMeasure": {
+            "type": "string"
+          },
+          "SeasoningIndicator": {
+            "type": "string"
+          },
+          "ShortSellRestrictionType": {
+            "type": "string"
+          },
+          "SpeculatorInitialMarginLimit": {
+            "type": "string"
+          },
+          "SpeculatorMaintenanceMarginLimit": {
+            "type": "string"
+          },
+          "StockMarginableIndicator": {
+            "type": "string"
+          },
+          "SuspendIndicator": {
+            "type": "string"
+          },
+          "TradeLotSize": {
+            "type": "number"
+          },
+          "TradingSectionForJapaneseStock": {
+            "type": "string"
+          },
+          "TradingUnitOfMeasure": {
+            "type": "string"
+          },
+          "ContractSettlementMethod": {
+            "type": "string"
+          },
+          "SettlementDays": {
+            "type": "string"
+          },
+          "DaysToSettlementText": {
+            "type": "string"
+          },
+          "EUShortSellEligible": {
+            "type": "string"
+          },
+          "ActivelyTradedIndicator": {
+            "type": "string"
+          },
+          "NoShortSellIndicator": {
+            "type": "string"
+          },
+          "ExchStockConnectQuoteStatus": {
+            "type": "string"
+          },
+          "MktListingLastChangeUserId": {
+            "type": "string"
+          },
+          "MktListingLastChangeDateTime": {
+            "type": "string"
+          },
+          "ExchStockConnectType": {
+            "type": "string"
+          },
+          "SecurityShortSaleIndicator": {
+            "type": "string"
+          },
+          "ListingQualificationType": {
+            "type": "string"
+          },
+          "MktListingDataSourceId": {
+            "type": "string"
+          },
+          "MarketIssueType": {
+            "type": "string"
+          },
+          "NoNakedShortSellIndicator": {
+            "type": "string"
+          },
+          "RequestforAdmissiontoTradingbyIssuer": {
+            "type": "string"
+          },
+          "TradingAdmissionApprovalDate": {
+            "type": "string"
+          },
+          "Volume": {
+            "type": "string"
+          },
+          "TradingAdmissionRequestDate": {
+            "type": "string"
+          },
+          "MktListSettleCurrencyCode": {
+            "type": "string"
+          },
+          "DelistingDateTime": {
+            "type": "object"
+          }
+        }
+      },
+      "Prices": {
+        "type": "object",
+        "properties": {
+          "PriceForMarket": {
+            "type": "object",
+            "properties": {
+              "MarketDetails": {
+                "type": "object",
+                "properties": {
+                  "MarketName": {
+                    "type": "string"
+                  },
+                  "MICCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "PriceDate": {
+            "type": "string"
+          },
+          "PriceAdjustedDate": {
+            "type": "string"
+          },
+          "PriceCurrency": {
+            "type": "string"
+          },
+          "PriceSource": {
+            "type": "string"
+          },
+          "PriceSourceDescription": {
+            "type": "string"
+          },
+          "PriceVendor": {
+            "type": "string"
+          },
+          "PriceQuoteMethod": {
+            "type": "string"
+          },
+          "PricingMethodType": {
+            "type": "string"
+          },
+          "PriceValidity": {
+            "type": "string"
+          },
+          "AdditionalPriceQualification": {
+            "type": "string"
+          },
+          "QuoteLotSize": {
+            "type": "number"
+          },
+          "TradeVolume": {
+            "type": "number"
+          },
+          "OpenPrice": {
+            "type": "number"
+          },
+          "ClosingPrice": {
+            "type": "number"
+          },
+          "LastPrice": {
+            "type": "number"
+          },
+          "AskPrice": {
+            "type": "number"
+          },
+          "BidPrice": {
+            "type": "number"
+          },
+          "MidPrice": {
+            "type": "number"
+          },
+          "CurrentPrice": {
+            "type": "number"
+          },
+          "LowPrice": {
+            "type": "number"
+          },
+          "HighPrice": {
+            "type": "number"
+          },
+          "Week52High": {
+            "type": "number"
+          },
+          "Week52Low": {
+            "type": "number"
+          },
+          "FixingPrice": {
+            "type": "number"
+          },
+          "FutureOpenInterest": {
+            "type": "number"
+          },
+          "DerivePrice": {
+            "type": "number"
+          },
+          "NetAssetValue": {
+            "type": "number"
+          },
+          "SettlementPrice": {
+            "type": "number"
+          },
+          "BidBusinessDate": {
+            "type": "string"
+          },
+          "MidBusinessDate": {
+            "type": "string"
+          },
+          "AskBusinessDate": {
+            "type": "string"
+          },
+          "LastBusinessDate": {
+            "type": "string"
+          },
+          "CloseBusinessDate": {
+            "type": "string"
+          },
+          "NetAssetValueBusinessDate": {
+            "type": "string"
+          },
+          "SettlementBusinessDate": {
+            "type": "string"
+          },
+          "DirtyCleanIndicator": {
+            "type": "string"
+          }
+        }
+      },
+      "IssueCurveAndSurfaceCharacteristics": {
+        "type": "object",
+        "properties": {
+          "ICSCPrimaryCalendar": {
+            "type": "object",
+            "properties": {
+              "Calendar": {
+                "type": "object",
+                "properties": {
+                  "CalendarName": {
+                    "type": "string"
+                  },
+                  "CalendarType": {
+                    "type": "string"
+                  },
+                  "WeekendEndDateNumber": {
+                    "type": "string"
+                  },
+                  "WeekendStartDateNumber": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "TenorDaysDetails": {
+            "type": "object",
+            "properties": {
+              "TNCDBusinessDayConvention": {
+                "type": "string"
+              },
+              "TNCDPeriodEndConvention": {
+                "type": "string"
+              },
+              "TNCDCompoundingFrequency": {
+                "type": "string"
+              },
+              "TNCDDaysPerMonthBasis": {
+                "type": "string"
+              },
+              "TNCDMaturityDate": {
+                "type": "object"
+              },
+              "TNCDMaturityPeriodEndDate": {
+                "type": "object"
+              },
+              "TNCDMaturityPeriodStartDate": {
+                "type": "object"
+              },
+              "TNCDSpotLagDays": {
+                "type": "string"
+              },
+              "TNCDPaymentLag": {
+                "type": "string"
+              },
+              "TNCDPayRollingConvention": {
+                "type": "string"
+              },
+              "TNCDTenorDays": {
+                "type": "string"
+              },
+              "TNCDTenorDaysYearFractions": {
+                "type": "number"
+              },
+              "TNCDTenorType": {
+                "type": "string"
+              }
+            }
+          },
+          "ICSCBusinessDayConvention": {
+            "type": "string"
+          },
+          "ICSCPeriodEndConvention": {
+            "type": "string"
+          },
+          "ICSCCompoundingFrequency": {
+            "type": "string"
+          },
+          "ICSCDaysPerMonthBasis": {
+            "type": "string"
+          },
+          "ICSCDataStatus": {
+            "type": "string"
+          },
+          "ICSCMaturityDate": {
+            "type": "object"
+          },
+          "ICSCMaturityPeriodEndDate": {
+            "type": "object"
+          },
+          "ICSCMaturityPeriodStartDate": {
+            "type": "object"
+          },
+          "ICSCSpotLagDays": {
+            "type": "string"
+          },
+          "ICSCCharacteristicsActiveTill": {
+            "type": "string"
+          },
+          "ICSCCharacteristicsActiveFrom": {
+            "type": "string"
+          },
+          "ICSCConventionsName": {
+            "type": "string"
+          },
+          "ICSCConventionLegType": {
+            "type": "string"
+          },
+          "ICSCPaymentLag": {
+            "type": "string"
+          },
+          "ICSCRollingPeriod": {
+            "type": "string"
+          },
+          "ICSCPayRollingConvention": {
+            "type": "string"
+          },
+          "ICSCLongStubIndicator": {
+            "type": "string"
+          },
+          "ICSCRateFixingResetType": {
+            "type": "string"
+          }
+        }
+      },
+      "GoldenPrice": {
+        "type": "object",
+        "properties": {
+          "KeyFiguresDetails": {
+            "type": "object",
+            "properties": {
+              "Quality": {
+                "type": "number"
+              },
+              "Liquidity": {
+                "type": "number"
+              },
+              "BidAskedSpread": {
+                "type": "number"
+              },
+              "BidAskedMultiply": {
+                "type": "number"
+              },
+              "ISCVCurrency": {
+                "type": "string"
+              },
+              "ISCVSubscriber": {
+                "type": "string"
+              },
+              "ISCVSnapTime": {
+                "type": "string"
+              },
+              "ISCVGoldenPriceIndicators": {
+                "type": "string"
+              },
+              "ISCVLastChangeUser": {
+                "type": "string"
+              },
+              "ISCVAsOfDateTime": {
+                "type": "object"
+              }
+            }
+          },
+          "GPCSVendor": {
+            "type": "string"
+          },
+          "GPCSContributor": {
+            "type": "string"
+          },
+          "GPCSAdditionalPriceQualifier": {
+            "type": "string"
+          },
+          "GPCSPriceDateTime": {
+            "type": "string"
+          },
+          "GPCSPriceQuoteType": {
+            "type": "string"
+          },
+          "GPCSCurrency": {
+            "type": "string"
+          },
+          "GPCSBusinessDateTime": {
+            "type": "string"
+          },
+          "GPCSTradingVolume": {
+            "type": "string"
+          },
+          "GPCSPricingMethod": {
+            "type": "string"
+          },
+          "GPCSSnapTime": {
+            "type": "string"
+          },
+          "GPCSSubscriber": {
+            "type": "string"
+          },
+          "GPCSMarketName": {
+            "type": "string"
+          },
+          "GPCSAsked": {
+            "type": "number"
+          },
+          "GPCSBid": {
+            "type": "number"
+          },
+          "GPCSMid": {
+            "type": "number"
+          },
+          "GPCSLast": {
+            "type": "number"
+          },
+          "GoldenpriceType": {
+            "type": "string"
+          },
+          "Goldenprice": {
+            "type": "number"
+          }
+        }
+      },
+      "PriceAttributes": {
+        "type": "object",
+        "properties": {
+          "PricingHistory": {
+            "type": "object",
+            "properties": {
+              "ISPHAdjstTms": {
+                "type": "string"
+              },
+              "ISPHAskPrice": {
+                "type": "number"
+              },
+              "ISPHISPAOID": {
+                "type": "string"
+              },
+              "ISPHPrice": {
+                "type": "number"
+              },
+              "ISPHPriceDate": {
+                "type": "object"
+              },
+              "ISPHBidPrice": {
+                "type": "number"
+              },
+              "ISPHLastPrice": {
+                "type": "number"
+              }
+            }
+          },
+          "PriceAttributeContributor": {
+            "type": "string"
+          },
+          "PriceAttributeCurrency": {
+            "type": "string"
+          },
+          "PriceAttributePriceQuoteMethod": {
+            "type": "string"
+          },
+          "PriceAttributeAdditionalPriceQualification": {
+            "type": "string"
+          },
+          "PriceAttributeDataSource": {
+            "type": "string"
+          },
+          "PriceAttributeGoldenIndicator": {
+            "type": "string"
+          },
+          "PriceAttributeIdentifier": {
+            "type": "string"
+          },
+          "PriceAttributeMarket": {
+            "type": "string"
+          },
+          "PriceAttributePriceType": {
+            "type": "string"
+          },
+          "PriceAttributeSnapTime": {
+            "type": "string"
+          }
+        }
+      },
+      "ExtendedDetails": {
+        "type": "object",
+        "properties": {
+          "Tenor": {
+            "type": "string"
+          },
+          "OptionStrikePrice": {
+            "type": "number"
+          },
+          "OptionTenor": {
+            "type": "string"
+          },
+          "OptionTenorDays": {
+            "type": "number"
+          },
+          "TenorDays": {
+            "type": "number"
+          },
+          "Delta": {
+            "type": "number"
+          }
+        }
+      },
+      "ForeignExchangeCharacteristics": {
+        "type": "object",
+        "properties": {
+          "FxDealType": {
+            "type": "string"
+          },
+          "FxSourceCurrencyCode": {
+            "type": "string"
+          },
+          "FxTargetCurrencyCode": {
+            "type": "string"
+          },
+          "FxPartyType": {
+            "type": "string"
+          },
+          "FxUnderlyingType": {
+            "type": "string"
+          },
+          "FxFinalFXRate": {
+            "type": "number"
+          },
+          "FxFinalFXRateDateTime": {
+            "type": "object"
+          },
+          "FxInitialFXRate": {
+            "type": "number"
+          },
+          "FxInitialFXRateDateTime": {
+            "type": "object"
+          },
+          "FxNominalTenor": {
+            "type": "string"
+          },
+          "FxCrossRateScalingFactor": {
+            "type": "number"
+          },
+          "FxDeadlineDateTime": {
+            "type": "object"
+          },
+          "FxStartDateTime": {
+            "type": "object"
+          },
+          "FxDataSourceID": {
+            "type": "string"
+          },
+          "FxDataStatus": {
+            "type": "string"
+          },
+          "FxLastChangeDateTime": {
+            "type": "object"
+          },
+          "FxLastChangeUserID": {
+            "type": "string"
+          },
+          "FxEndDateTime": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

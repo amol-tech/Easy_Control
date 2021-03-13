@@ -1,0 +1,30 @@
+[
+	{
+		"deptno" : "D01",
+		"dname" : "Sales",
+		"location" : "Mumbai",
+		"employees" :
+			[
+				{
+					"empno" : "E01",
+					"ename" : "Albert",
+					"desig" : "Manager"
+				},
+				{
+					"empno" : "E02",
+					"ename" : "Markus",
+					"desig" : "Officer"
+				}
+			]
+	},
+	{
+		"deptno" : "D02",
+		"dname" : "Accounts",
+		"location" : "Mumbai"
+	},
+	{
+		"deptno" : "D02",
+		"dname" : "Production",
+		"location" : "Pune"
+	}
+]
