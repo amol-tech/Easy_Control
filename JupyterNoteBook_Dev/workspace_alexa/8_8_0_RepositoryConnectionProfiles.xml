@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<repositoryConnectionProfiles>
-    <repository name="IS_SAN" host="indev29" port="1521" service="indev29" password="IS_SAN" user="IS_SAN">
-        <sslEnable>false</sslEnable>
-    </repository>
-</repositoryConnectionProfiles>

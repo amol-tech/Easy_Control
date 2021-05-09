@@ -28,7 +28,7 @@ elements :
         - 'type->entityTypeId'
         - 'name'
       parent : 'Y'
-      verify_addon : 'verify_mapping'
+      compare_addon : 'compare_mapping'
     
     - name : 'dataGroup'
       compare_cols : 
