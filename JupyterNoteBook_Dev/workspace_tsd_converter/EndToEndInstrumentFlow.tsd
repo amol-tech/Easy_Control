@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSuite dataSetFile="EndToEndInstrumentFlow">
+<TestCase dependency="" description="Description: This test case cleans up the mentioned identifier from the ISSU, ISSR &amp; FINS tables and then enables the RT, MsgByMsg and Batch based publishing profiles." isParallel="false" process="true" testCaseNo="TC_00001">
+<TestSteps>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="1">
+<Parameters>
+<Parameter name="SQLFileName">deleteinstrid.sql</Parameter>
+<Parameter name="Placeholder">PREF_ISS_ID|40800984-1000</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="2">
+<Parameters>
+<Parameter name="SQLFileName">Issuer_Delete.sql</Parameter>
+<Parameter name="Placeholder">PREF_ISSR_ID|40800984</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="3">
+<Parameters>
+<Parameter name="SQLFileName">Fins_Delete.sql</Parameter>
+<Parameter name="Placeholder">PREF_FINS_ID|40800984</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="EnablePublishingProfile" process="true" stepNo="4">
+<Parameters>
+<Parameter name="SubscriptionName">RealTimePub_CSV</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="EnablePublishingProfile" process="true" stepNo="5">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_CSV</Parameter>
+<Parameter name="TimeOut">5</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="EnablePublishingProfile" process="true" stepNo="6">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_XML</Parameter>
+<Parameter name="TimeOut">5</Parameter>
+</Parameters>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case loads a specific Vendor datafile and publishes it using the RealTime Publishing &amp; then compares the result with the expected file" isParallel="false" process="true" testCaseNo="TC_00002">
+<TestSteps>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="1">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="false" stepNo="2">
+<Parameters>
+<Parameter name="SQLFileName">BBEquityInstrIDCount.sql</Parameter>
+<Parameter name="OutputFileName">BBInstrumentIDCount</Parameter>
+<Parameter name="isVddb">N</Parameter>
+<Parameter name="XMLCSV">csv</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DownstreamPublishFiles" process="true" stepNo="3">
+<Parameters>
+<Parameter name="SubscriptionName">RealTimePub_CSV</Parameter>
+<Parameter name="latestfilesonly">Y</Parameter>
+<Parameter name="AppendFlag">N</Parameter>
+<Parameter name="FilePattern">PublishedFile(.*)</Parameter>
+<Parameter name="PublishingFileName">BBGlobalEquity_RT_Actual.csv</Parameter>
+<Parameter name="TimeOut">2</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="CSVComparison" process="true" stepNo="4">
+<Parameters>
+<Parameter name="FirstFile">BBGlobalEquity_RT_Expected.csv</Parameter>
+<Parameter name="IsCount">Y</Parameter>
+<Parameter name="keycolumnname">Equity.InstrumentDetails.PreferredIdentifierValue</Parameter>
+<Parameter name="OutputFileName">FirstRTCSVCompResult</Parameter>
+</Parameters>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case enables a Batch Publishing profile and publishes it in the xml format." isParallel="false" process="true" testCaseNo="TC_00003">
+<TestSteps>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="1">
+<Parameters>
+<Parameter name="EventName">BulkSubscriptionPublishingEvent</Parameter>
+<Parameter name="Database">jdbc/GSDM-1</Parameter>
+<Parameter name="FilePerEntity">false</Parameter>
+<Parameter name="PublishingBulkSize">500</Parameter>
+<Parameter name="PublishingFileName">BatchXMLEquityGSO_Actual</Parameter>
+<Parameter name="SubscriptionName">BatchScheduleBased_XML</Parameter>
+<Parameter name="addCorrelationHeader">true</Parameter>
+<Parameter name="addCoveringXMLHeader">true</Parameter>
+<Parameter name="entityMode">BUSINESS_ENTITY</Parameter>
+<Parameter name="publishingMode">BATCH</Parameter>
+<Parameter name="subscriptionId">1234</Parameter>
+<Parameter name="TimeOut">60</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DownstreamPublishFiles" process="true" stepNo="2">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_XML</Parameter>
+<Parameter name="PublishingFileName">BatchXMLEquityGSO_Actual.xml</Parameter>
+<Parameter name="latestfilesonly">Y</Parameter>
+<Parameter name="AppendFlag">N</Parameter>
+<Parameter name="FilePattern">BatchXMLEquityGSO_Actual(.*)</Parameter>
+<Parameter name="TimeOut">5</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="XMLComparison" process="true" stepNo="3">
+<Parameters>
+<Parameter name="firstFile">BatchXMLEquityGSO_Expected.xml</Parameter>
+<Parameter name="KeysConfigDoc">KeyConfig.xlsx</Parameter>
+<Parameter name="isPublished">Y</Parameter>
+<Parameter name="TagToHide">JobId|MessageGenerationTimeStamp|AllClassificationLastChangeDateTime|AllGeographicStartDateTime|AllGeographicLastChangeDateTime|AllStatisticLastChangeDateTime|AllIdentifierLastChangeDateTime|PrimaryMktStartDateTime|PrimaryMktLastChangeDateTime|InstrCapLastChangeDateTime|EquityFeaturesLastChangeDateTime|LastOfferStartDateTime|LastOfferLastChangeDateTime|CountryName|InstrumentLastChangeDate|InstrumentDescriptionEffectiveDate|InstrumentDescriptionLastChangeDate|ClassificationStartDate|AllClassificationStartDateTime|InstrumentGeographicEffectiveDate|AllStatisticStartDateTime|IdentifierEffectiveDat|AllIdentifierStartDateTime</Parameter>
+<Parameter name="OutputFileName">DiffOutput</Parameter>
+</Parameters>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case enables the AOI based publishing &amp; downstreams the file in the JSON format which then gets compared with its Expected file." isParallel="false" process="true" testCaseNo="TC_00004">
+<TestSteps>
+<Step expectedResult="P" name="EnablePublishingProfile" process="true" stepNo="1">
+<Parameters>
+<Parameter name="SubscriptionName">MsgByMsgPubAOI_JSON</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="2">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr_chng.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DownstreamPublishFiles" process="true" stepNo="3">
+<Parameters>
+<Parameter name="SubscriptionName">MsgByMsgPubAOI_JSON</Parameter>
+<Parameter name="latestfilesonly">Y</Parameter>
+<Parameter name="AppendFlag">N</Parameter>
+<Parameter name="FilePattern">PublishedFile(.*)</Parameter>
+<Parameter name="PublishingFileName">BBGlobalEquity_MMAOI_Actual.json</Parameter>
+<Parameter name="TimeOut">2</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="JSONComparison" process="true" stepNo="4">
+<Parameters>
+<Parameter name="ActualJSONFile">BBGlobalEquity_MMAOI_Actual.json</Parameter>
+<Parameter name="ExpectedJSONFile">BBGlobalEquity_MMAOI_Expected.json</Parameter>
+<Parameter name="OutputFileName">JSONOutput_AOI_diff</Parameter>
+</Parameters>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case applies the entity lock on equity entity loaded via SFL and verifies the same." isParallel="false" process="true" testCaseNo="TC_00005">
+<TestSteps>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="1">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="2">
+<Parameters>
+<Parameter name="SQLFileName">RemoveLock_Query.sql</Parameter>
+<Parameter name="PlaceHolder">40800984-1000</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="3">
+<Parameters>
+<Parameter name="SQLFileName">FT_T_BECF_INSERT.sql</Parameter>
+<Parameter name="PlaceHolder">CONFIG_OPTION_TYP|LOCKCOMMENTCAPTURE||CONFIG_DATA_TXT|true||BUS_ENTITY_DATA_DESC|Equity</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="4">
+<Parameters>
+<Parameter name="SQLFileName">FT_T_BECF_UPDATE.sql</Parameter>
+<Parameter name="PlaceHolder">CONFIG_DATA_TXT|true||BUS_ENTITY_DATA_DESC|Equity||CONFIG_OPTION_TYP|LOCKCOMMENTCAPTURE</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="5">
+<Parameters>
+<Parameter name="SQLFileName">BDEFCacheClear.sql</Parameter>
+<Parameter name="PlaceHolder">BUS_ENTITY_DATA_NME|Equity</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunUI" process="true" stepNo="6">
+<UiDescription>Purpose:
+1. This test case verifies the reload functionality after creation of a new entity from the UI
+Preconditions:
+1. User has access to create a new entity
+2. An already created form template exists
+</UiDescription>
+<UiTestSteps suiteName="EndToEndInstrumentFlow" tcName="IssueClick">
+<UiTestStep description="Referesh UI" rowNo="2" stepName="refreshURL">
+<UiParameters>
+<UiParameter format="string">$applicationURL</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Navigate to Issue Details Screen" rowNo="3" stepName="NavigateToMaster">
+<UiParameters>
+<UiParameter format="string">Security Master:Issue:Issue</UiParameter>
+</UiParameters>
+</UiTestStep>
+</UiTestSteps>
+</Step>
+<Step expectedResult="P" name="RunUI" process="true" stepNo="7">
+<UiDescription>Purpose:
+1. This test case verifies Entity lock is getting applied
+Preconditions:
+1. Enable Lock comments option via GSO Designer - Select the automation steps for this action
+2. An already created entity exists - Equity Instrument
+</UiDescription>
+<UiTestSteps suiteName="EndToEndInstrumentFlow" tcName="TC_Locking_GSQA_123">
+<UiTestStep description="Cloase all tabs" rowNo="2" stepName="closeAllGSMenuTab"/>
+<UiTestStep description="Referesh UI" rowNo="3" stepName="refreshURL">
+<UiParameters>
+<UiParameter format="string">$applicationURL</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="GlobalSearch" rowNo="4" stepName="GlobalSearch">
+<UiParameters>
+<UiParameter format="string">40800984-1000</UiParameter>
+<UiParameter format="string">Issue</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Sets the template inside an entity" rowNo="5" stepName="SetTemplateFields">
+<UiParameters>
+<UiParameter format="string">S: Equity:S</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Applies/Removes lock to field or entity" rowNo="6" stepName="ApplyRemoveLock">
+<UiParameters>
+<UiParameter format="string">Lock|Lock applied to whole entity</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Saves entire record" rowNo="7" stepName="SaveRecord">
+<UiParameters>
+<UiParameter format="string">Entity Saved Successfully.</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Verify its label on screen and tooltip" rowNo="8" stepName="VerifyLock">
+<UiParameters>
+<UiParameter format="string">Lock|Lock applied to whole entity</UiParameter>
+<UiParameter format="string">True</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Veries the fields has expected data or not" rowNo="9" stepName="VerifyEntityRecord">
+<UiParameters>
+<UiParameter format="string">Summary|Instrument Name|Bank of St Vincent &amp; the Gr</UiParameter>
+</UiParameters>
+</UiTestStep>
+</UiTestSteps>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case verifies if no changes found in the Publishing file triggered fom the Batch based publishing, after applying the entity level lock from the above test case." isParallel="false" process="true" testCaseNo="TC_00006">
+<TestSteps>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="1">
+<Parameters>
+<Parameter name="EventName">BulkSubscriptionPublishingEvent</Parameter>
+<Parameter name="Database">jdbc/GSDM-1</Parameter>
+<Parameter name="FilePerEntity">false</Parameter>
+<Parameter name="PublishingBulkSize">500</Parameter>
+<Parameter name="PublishingFileName">BatchCSVEquityGSO1_1</Parameter>
+<Parameter name="SubscriptionName">BatchScheduleBased_CSV</Parameter>
+<Parameter name="addCorrelationHeader">true</Parameter>
+<Parameter name="addCoveringXMLHeader">true</Parameter>
+<Parameter name="entityMode">BUSINESS_ENTITY</Parameter>
+<Parameter name="publishingMode">BATCH</Parameter>
+<Parameter name="subscriptionId">1234</Parameter>
+<Parameter name="TimeOut">60</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DownstreamPublishFiles" process="true" stepNo="2">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_CSV</Parameter>
+<Parameter name="PublishingFileName">BatchCSVEquityGSO1_1.csv</Parameter>
+<Parameter name="latestfilesonly">Y</Parameter>
+<Parameter name="AppendFlag">N</Parameter>
+<Parameter name="FilePattern">BatchCSVEquityGSO1_1(.*)</Parameter>
+<Parameter name="TimeOut">5</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="3">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr_chng.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DownstreamPublishFiles" process="true" stepNo="4">
+<Parameters>
+<Parameter name="SubscriptionName">RealTimePub_CSV</Parameter>
+<Parameter name="latestfilesonly">Y</Parameter>
+<Parameter name="AppendFlag">N</Parameter>
+<Parameter name="FilePattern">PublishedFile(.*)</Parameter>
+<Parameter name="PublishingFileName">BBGlobalEquity_EquityRT_1.csv</Parameter>
+<Parameter name="TimeOut">2</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="CSVComparison" process="true" stepNo="5">
+<Parameters>
+<Parameter name="FirstFile">BatchCSVEquityGSO1_1.csv</Parameter>
+<Parameter name="secondfile">BBGlobalEquity_EquityRT_1.csv</Parameter>
+<Parameter name="IsCount">Y</Parameter>
+<Parameter name="keycolumnname">Equity.InstrumentDetails.PreferredIdentifierValue</Parameter>
+<Parameter name="OutputFileName">SecondBatchRTDiffOutput</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunUI" process="true" stepNo="6">
+<UiDescription>Purpose:
+1. This test case removes entity lock from the record that is loaded via SFL
+Preconditions:
+1. Enable Lock comments option via GSO Designer.
+2. You need to load a equity record via SFL
+</UiDescription>
+<UiTestSteps suiteName="EndToEndInstrumentFlow" tcName="TC_Locking_GSQA_124">
+<UiTestStep description="Cloase all tabs" rowNo="2" stepName="closeAllGSMenuTab"/>
+<UiTestStep description="Referesh UI" rowNo="3" stepName="refreshURL">
+<UiParameters>
+<UiParameter format="string">$applicationURL</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Directly search the desired entity and Open" rowNo="4" stepName="GlobalSearch">
+<UiParameters>
+<UiParameter format="string">40800984-1000</UiParameter>
+<UiParameter format="string">Issue</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Sets the template inside an entity" rowNo="5" stepName="SetTemplateFields">
+<UiParameters>
+<UiParameter format="string">S: Equity:S</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Applies/Removes lock to field or entity" rowNo="6" stepName="ApplyRemoveLock">
+<UiParameters>
+<UiParameter format="string">UnLock</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Saves entire record" rowNo="7" stepName="SaveRecord">
+<UiParameters>
+<UiParameter format="string">Entity Saved Successfully.</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Verify its label on screen and tooltip" rowNo="8" stepName="VerifyLock">
+<UiParameters>
+<UiParameter format="string">UnLock|Lock applied to whole entity</UiParameter>
+<UiParameter format="string">false</UiParameter>
+</UiParameters>
+</UiTestStep>
+</UiTestSteps>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case verifies both the OPEN and CLOSED NTEL Exceptions for the particular entity." isParallel="false" process="true" testCaseNo="TC_00007">
+<TestSteps>
+<Step expectedResult="P" name="RunSQL" process="true" stepNo="1">
+<Parameters>
+<Parameter name="SQLFileName">DeleteException.sql</Parameter>
+<Parameter name="PlaceHolder">EQ0000000052231968</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="2">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="F" name="RunWorkFlow" process="true" stepNo="3">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr.IDMVError.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunUI" process="true" stepNo="4">
+<UiDescription>Purpose:
+1. This test case verifies the Export functionality on the search screen
+Preconditions:
+1. Selected screen has large amount of search results (e.g. Issue Screen)
+2. User has set current record count on the search screen (e.g. 50)
+</UiDescription>
+<UiTestSteps suiteName="EndToEndInstrumentFlow" tcName="TC_GSQA_ExceptionMgmt_1">
+<UiTestStep description="Cloase all tabs" rowNo="2" stepName="closeAllGSMenuTab"/>
+<UiTestStep description="Referesh UI" rowNo="3" stepName="refreshURL">
+<UiParameters>
+<UiParameter format="string">$applicationURL</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Navigate to the Issue screen" rowNo="4" stepName="NavigateToMaster">
+<UiParameters>
+<UiParameter format="string">Exception Management:Exception Management:Transactions &amp; Exceptions</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Select the type of Template and other parameters to create a template" rowNo="5" stepName="SetTemplateFields">
+<UiParameters>
+<UiParameter format="string">Entity|Instrument Exception||Template|!IESearchTemplate!</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Directly search the desired entity and Open" rowNo="6" stepName="SearchRecords">
+<UiParameters>
+<UiParameter format="string">Instrument Name|Bank of St Vincent &amp; the Gr||Notification Status|OPEN</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="" rowNo="7" stepName="VerifyRecordsCount">
+<UiParameters>
+<UiParameter format="integer">2</UiParameter>
+</UiParameters>
+</UiTestStep>
+</UiTestSteps>
+</Step>
+<Step expectedResult="P" name="RunWorkFlow" process="true" stepNo="5">
+<Parameters>
+<Parameter name="EventName">SFL</Parameter>
+<Parameter name="MessageType">BBGlobalEquity</Parameter>
+<Parameter name="FileName">equity_lamr.out.20180426</Parameter>
+<Parameter name="BulkSize">500</Parameter>
+<Parameter name="TimeOut">1</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="RunUI" process="false" stepNo="6">
+<UiDescription>Purpose:
+1. This test case verifies the Export functionality on the search screen
+Preconditions:
+1. Selected screen has large amount of search results (e.g. Issue Screen)
+2. User has set current record count on the search screen (e.g. 50)
+</UiDescription>
+<UiTestSteps suiteName="EndToEndInstrumentFlow" tcName="TC_GSQA_ExceptionMgmt_2">
+<UiTestStep description="Cloase all tabs" rowNo="2" stepName="closeAllGSMenuTab"/>
+<UiTestStep description="Referesh UI" rowNo="3" stepName="refreshURL">
+<UiParameters>
+<UiParameter format="string">$applicationURL</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Navigate to the Issue screen" rowNo="4" stepName="NavigateToMaster">
+<UiParameters>
+<UiParameter format="string">Exception Management:Exception Management:Transactions &amp; Exceptions</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Select the type of Template and other parameters to create a template" rowNo="5" stepName="SetTemplateFields">
+<UiParameters>
+<UiParameter format="string">Entity|Instrument Exception||Template|!IESearchTemplate!</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="Directly search the desired entity and Open" rowNo="6" stepName="SearchRecords">
+<UiParameters>
+<UiParameter format="string">Instrument Name|Bank of St Vincent &amp; the Gr||Notification Status|CLOSED</UiParameter>
+</UiParameters>
+</UiTestStep>
+<UiTestStep description="" rowNo="7" stepName="VerifyRecordsCount">
+<UiParameters>
+<UiParameter format="integer">2</UiParameter>
+</UiParameters>
+</UiTestStep>
+</UiTestSteps>
+</Step>
+</TestSteps>
+</TestCase>
+<TestCase dependency="" description="Description: This test case disables all the enabled RT, MsgByMsg and Batch based Publishing profiles." isParallel="false" process="true" testCaseNo="TC_00008">
+<TestSteps>
+<Step expectedResult="P" name="DisablePublishingProfile" process="true" stepNo="1">
+<Parameters>
+<Parameter name="SubscriptionName">RealTimePub_CSV</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DisablePublishingProfile" process="true" stepNo="2">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_CSV</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DisablePublishingProfile" process="true" stepNo="3">
+<Parameters>
+<Parameter name="SubscriptionName">BatchScheduleBased_XML</Parameter>
+</Parameters>
+</Step>
+<Step expectedResult="P" name="DisablePublishingProfile" process="true" stepNo="4">
+<Parameters>
+<Parameter name="SubscriptionName">MsgByMsgPubAOI_JSON</Parameter>
+</Parameters>
+</Step>
+</TestSteps>
+</TestCase>
+</TestSuite>
