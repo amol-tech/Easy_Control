@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connectionDetail host="indev29" password="GC_881_TOOLS" port="1521" service="indev29" user="GC_881_TOOLS">
+    <DBType>oracle</DBType>
+</connectionDetail>
