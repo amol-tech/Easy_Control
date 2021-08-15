@@ -19,7 +19,25 @@ public class AccountServiceImpl implements AccountService
     @Transactional(readOnly = true)
     public List<Account> getAllAccounts()
     {
-        return accountDAO.selectAllAccounts();
+        return accountDAO.getAllAccounts();
+    }
+    
+    @Transactional
+    public void add(Account account)
+    {
+        accountDAO.add(account);
+    }
+    
+    @Transactional
+    public void remove(Account account)
+    {
+        accountDAO.remove(account);
+    }
+    
+    @Transactional
+    public Account getAccountByIdentifer(String id)
+    {
+        return accountDAO.getAccountByIdentifer(id);
     }
 
 }

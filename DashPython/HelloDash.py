@@ -5,6 +5,7 @@ import dash_core_components as dcc
 app = dash.Dash()
 app.layout = html.Div(className='row', children=[
     html.H1("Tips database analysis (First dashboard)"),
+    dcc.Input(),
     dcc.Dropdown(),
     html.Div(children=[
         dcc.Graph(id="graph1", style={'display': 'inline-block'}),
