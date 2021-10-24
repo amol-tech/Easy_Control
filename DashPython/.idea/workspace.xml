@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8415574-6b9f-4083-9eac-027d02a5bf9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloDash.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelloDash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JupyterNoteBook_Dev/workspace_alexa/alexa.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../JupyterNoteBook_Dev/workspace_alexa/alexa.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Spring_Hibernate_Model/scripts/Working Copy of create_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HtmlAndCSS/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../HtmlAndCSS/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HtmlAndCSS/hello_world.html" beforeDir="false" afterPath="$PROJECT_DIR$/../HtmlAndCSS/hello_world.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
