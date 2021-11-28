@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+{% load static %}
+<html
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Informations</title>
+        <link rel="stylesheet" href="{% static 'css/standard.css'%}">
+    </head>
+    <body>
+        <h1>Welcome to Employee Dashboard</h1>
+        <div class="djangtwo">
+            {% if emp_records %}
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Salary</th>
+                        <th>Joining Date</th>
+                    </thead>
+
+                    {% for emp in emp_records %}
+                    <tr>
+                        <td>{{emp.ename}}</td>
+                        <td>{{emp.desig}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.doj}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>No Employee Information</p>
+            {% endif %}
+        </div>
+    </body>
 </html>

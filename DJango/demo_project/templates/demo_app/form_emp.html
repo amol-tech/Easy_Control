@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+    <h1>Employee Entry Form</h1>
+    <div class="container">
+        <form method="POST">
+             {{form_emp.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
 </body>
 </html>
