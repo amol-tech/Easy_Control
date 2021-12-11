@@ -1,5 +1,6 @@
 from django import forms
-from demo_app.models import Employee
+from demo_app.models import Employee,UserProfileInfo
+from django.contrib.auth.models import User
 
 class EmployeeForm(forms.ModelForm):
     class Meta():
@@ -19,3 +20,18 @@ class EmployeeForm(forms.ModelForm):
             raise forms.ValidationError('Caught BOT!!')
         return botcatcher
     '''
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username','email','password')
+
+class UserProfileInfoForm(forms.ModelForm):
+    portfolio = forms.URLField(required=False)
+    picture = forms.ImageField(required=False)
+
+    class Meta():
+        model = UserProfileInfo
+        fields = ('portfolio','picture')
