@@ -1,0 +1,4 @@
+This article is about natural language processing done by computers. For the natural language processing done by the human brain, see Language processing in the brain.
+
+An automated online assistant providing customer service on a web page, an example of an application where natural language processing is a major component.[1]
+Natural language processing (NLP) is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data. The goal is a computer capable of "understanding" the contents of documents, including the contextual nuances of the language within them. The technology can then accurately extract information and insights contained in the documents as well as categorize and organize the documents themselves.

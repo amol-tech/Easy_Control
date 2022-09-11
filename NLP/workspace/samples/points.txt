@@ -1,0 +1,5 @@
+3.1	Text and speech processing
+3.2	Morphological analysis
+3.3	Syntactic analysis3.4	Lexical semantics of individual words in context
+3.5	Relational semantics
+3.6	Discourse
