@@ -437,16 +437,14 @@ class OutputResult():
                 else:
                     w_out_result = OutputPages(dict_out['data'])
                     tab_children.append(widgets.VBox([w_out_result.get_container()]))
-                self.__w_tab.set_title(i, dict_out['name'])
                 i = i + 1
             if 'name' in dict_out and 'dynamic_graph' in dict_out:    
-                    fig=dict_out.get('dynamic_graph')
-                    image_widget = widgets.Output()
-                    with image_widget:
-                        display(fig.show()) 
-                    tab_children.append(image_widget)   
-                    self.__w_tab.set_title(i, dict_out['name'])
-                    i=i+1    
+                fig=dict_out.get('dynamic_graph')
+                image_widget = widgets.Output()
+                with image_widget:
+                    display(fig.show()) 
+                tab_children.append(image_widget)   
+                i = i + 1   
             if 'name' in dict_out and 'graph' in dict_out:                
                 if isinstance(dict_out.get('graph'), str):
                     file = open(dict_out.get('graph'), "rb")
@@ -463,9 +461,14 @@ class OutputResult():
                     image_widget = widgets.Output()
                     with image_widget:
                         display(dict_out.get('graph'))        
-                self.__w_tab.set_title(i, dict_out['name'])
                 i = i + 1    
         self.__w_tab.children = tab_children
+        
+        # Setting the title
+        i = 0
+        for dict_out in self.__list_output: 
+            self.__w_tab.set_title(i, dict_out['name'])
+            i = i + 1
 
     def get_container(self):
         return self.__w_tab
